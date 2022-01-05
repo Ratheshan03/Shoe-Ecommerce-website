@@ -6,7 +6,7 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --first-color: hsl(31, 76%, 74%);
+  --first-color: hsl(170, 76%, 74%);
   --button-color: hsl(0, 0%, 24%);
   --button-color-alt: hsl(0, 0%, 28%);
   --title-color: hsl(0, 0%, 95%);
@@ -109,30 +109,6 @@ button {
   outline: none;
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color: hsl(31, 76%, 74%);
-  --button-color: hsl(0, 0%, 24%);
-  --button-color-alt: hsl(0, 0%, 28%);
-  --title-color: hsl(0, 0%, 95%);
-  --text-color: hsl(0, 0%, 75%);
-  --body-color: hsl(0, 0%, 12%);
-  --container-color: hsl(0, 0%, 16%);
-  --border-color: hsl(0, 0%, 20%);
-}
-
-/*========== Button Dark/Light ==========*/
-.change-theme {
-  color: var(--title-color);
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-/*========== 
-    Color changes in some parts of 
-    the website, in dark theme 
-==========*/
 .nav__toggle,
 .nav__shop,
 .button--gray {
@@ -308,6 +284,7 @@ body.dark-theme {
 
 .home__img {
   width: 240px;
+  height: 580px;
 }
 
 .home__img-bg {
@@ -333,7 +310,7 @@ body.dark-theme {
 
 .home__social-link {
   font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
+  color: var(--first-color);
   transition: 0.3s;
 }
 
