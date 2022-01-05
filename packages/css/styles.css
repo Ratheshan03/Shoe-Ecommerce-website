@@ -485,14 +485,14 @@ button {
 .products__card {
   position: relative;
   background-color: var(--container-color);
-  padding: 1.25rem 0;
+  padding: 2.25rem 0;
   border: 1px solid var(--border-color);
   text-align: center;
   transition: 0.3s;
 }
 
 .products__img {
-  height: 125px;
+  height: 145px;
   margin-bottom: var(--mb-1);
 }
 
@@ -658,8 +658,9 @@ button {
 }
 
 .new__img {
-  height: 215px;
+  height: 235px;
   margin-bottom: var(--mb-1);
+  box-shadow: 0 4px 12px hsla(0, 0%, 11%, 0.3);
 }
 
 .new__title,
