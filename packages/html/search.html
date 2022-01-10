@@ -7,6 +7,12 @@
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
 
+    <!--=============== jquery-ui CSS ================-->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+
     <!--=============== BOXICONS ===============-->
     <link
       rel="stylesheet"
@@ -157,8 +163,52 @@
     <main class="main">
       <!-- ===================== Search Form ===================== -->
       <section>
-        <div>
-          <form></form>
+        <div class="demo">
+          <form action="#">
+            <fieldset>
+              <label for="speed">Select a speed</label>
+              <select name="speed" id="speed">
+                <option>Slower</option>
+                <option>Slow</option>
+                <option selected="selected">Medium</option>
+                <option>Fast</option>
+                <option>Faster</option>
+              </select>
+
+              <label for="files">Select a file</label>
+              <select name="files" id="files">
+                <optgroup label="Scripts">
+                  <option value="jquery">jQuery.js</option>
+                  <option value="jqueryui">ui.jQuery.js</option>
+                </optgroup>
+                <optgroup label="Other files">
+                  <option value="somefile">Some unknown file</option>
+                  <option value="someotherfile">
+                    Some other file with a very long option text
+                  </option>
+                </optgroup>
+              </select>
+
+              <label for="number">Select a number</label>
+              <select name="number" id="number">
+                <option>1</option>
+                <option selected="selected">2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+
+              <label for="salutation">Select a title</label>
+              <select name="salutation" id="salutation">
+                <option disabled selected>Please pick one</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Dr.</option>
+                <option>Prof.</option>
+                <option>Other</option>
+              </select>
+            </fieldset>
+          </form>
         </div>
       </section>
 
@@ -343,6 +393,12 @@
 
     <!--=============== SWIPER JS ===============-->
     <script src="../js/swiper-bundle.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <!-- jquery-ui -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="../js/main.js"></script>
