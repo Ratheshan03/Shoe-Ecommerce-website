@@ -1186,29 +1186,93 @@ button {
 }
 
 /* ========= SEARCH PAGE ========= */
+.search {
+  width: 85vw;
+  margin: auto;
+}
+
+.search_container {
+  width: 85vw;
+  align-items: center;
+}
+
+.form-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .search__section-title {
   text-align: center;
   align-self: center;
 }
 
 .sub-search {
-  margin: 40px;
-  padding: 20px;
-  width: 70vw;
+  margin: 30px;
+  width: 60vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
 }
 
 .select-item {
   width: 200px;
   height: 38px;
   outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-input-item {
+  width: 200px;
+  height: 30px;
+  outline: none;
 }
 
 .search_labels {
   font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-75);
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-range {
+  width: 60vw;
+}
+
+.search-input-item {
+  text-align: center;
+  background-color: var(--button-color-alt);
+  border-radius: 5px;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  width: 75vw;
+}
+
+.sub-btn {
+  width: 60vw;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--button-color-alt);
+  color: white;
+  outline: none;
+  border: none;
+  font-size: var(--h3-font-size);
+}
+
+.sub-btn:hover {
+  background-color: rgb(175, 175, 175);
 }
 
 .wrapper {
@@ -1220,13 +1284,13 @@ button {
 }
 
 .wrapper .search_box {
-  width: 600px;
+  width: 60vw;
   background: #fff;
   border-radius: 5px;
-  height: 65px;
+  height: 60px;
   display: flex;
   padding: 10px;
-  box-shadow: 0 8px 6px -10px #b3c6ff;
+  box-shadow: 0 8px 6px -10px #c5d2f8;
   outline: none;
 }
 
@@ -1282,7 +1346,7 @@ button {
 }
 
 .wrapper .search_box .search_field {
-  width: 450px;
+  width: 400px;
   height: 100%;
   position: relative;
 }
@@ -1293,7 +1357,7 @@ button {
   border: 0px;
   font-size: 16px;
   padding-left: 20px;
-  padding-right: 38px;
+  padding-right: 30px;
   color: #6f768d;
   outline: none;
 }
