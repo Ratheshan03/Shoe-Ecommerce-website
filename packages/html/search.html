@@ -162,41 +162,65 @@
     <!--==================== MAIN ====================-->
     <main class="main">
       <!-- ===================== Search Form ===================== -->
-      <section>
-        <div class="demo">
+      <section class="home" id="home">
+        <div class="demo container grid">
           <form action="#">
-            <fieldset>
-              <label for="speed">Select a speed</label>
-              <select name="speed" id="speed">
-                <option>Slower</option>
-                <option>Slow</option>
-                <option selected="selected">Medium</option>
-                <option>Fast</option>
-                <option>Faster</option>
-              </select>
+            <div>
+              <div>
+                <div class="wrapper">
+                  <div class="search_box">
+                    <div class="dropdown">
+                      <div class="default_option">All</div>
+                      <ul>
+                        <li>All</li>
+                        <li>Recent</li>
+                        <li>Popular</li>
+                      </ul>
+                    </div>
+                    <div class="search_field">
+                      <input type="text" class="input" placeholder="Search" />
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="speed">Select a speed</label>
+                <select name="speed" id="speed">
+                  <option>Slower</option>
+                  <option>Slow</option>
+                  <option selected="selected">Medium</option>
+                  <option>Fast</option>
+                  <option>Faster</option>
+                </select>
+              </div>
 
-              <label for="files">Select a file</label>
-              <select name="files" id="files">
-                <optgroup label="Scripts">
-                  <option value="jquery">jQuery.js</option>
-                  <option value="jqueryui">ui.jQuery.js</option>
-                </optgroup>
-                <optgroup label="Other files">
-                  <option value="somefile">Some unknown file</option>
-                  <option value="someotherfile">
-                    Some other file with a very long option text
-                  </option>
-                </optgroup>
-              </select>
+              <div>
+                <label for="files">Select a file</label>
+                <select name="files" id="files">
+                  <optgroup label="Scripts">
+                    <option value="jquery">jQuery.js</option>
+                    <option value="jqueryui">ui.jQuery.js</option>
+                  </optgroup>
+                  <optgroup label="Other files">
+                    <option value="somefile">Some unknown file</option>
+                    <option value="someotherfile">
+                      Some other file with a very long option text
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
 
-              <label for="number">Select a number</label>
-              <select name="number" id="number">
-                <option>1</option>
-                <option selected="selected">2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+              <div>
+                <label for="number">Select a number</label>
+                <select name="number" id="number">
+                  <option>1</option>
+                  <option selected="selected">2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
 
               <label for="salutation">Select a title</label>
               <select name="salutation" id="salutation">
@@ -207,7 +231,7 @@
                 <option>Prof.</option>
                 <option>Other</option>
               </select>
-            </fieldset>
+            </div>
           </form>
         </div>
       </section>
@@ -394,10 +418,11 @@
     <!--=============== SWIPER JS ===============-->
     <script src="../js/swiper-bundle.min.js"></script>
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--=============== Font Awesome ================= -->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-    <!-- jquery-ui -->
+    <!--================== jquery ======================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <!--=============== MAIN JS ===============-->
