@@ -1406,6 +1406,11 @@ button {
   width: 100%;
   transition: all 0.5s ease;
 }
+
+.show-image {
+  width: 300px;
+}
+
 .img-showcase img {
   min-width: 100%;
 }
@@ -1414,6 +1419,7 @@ button {
 }
 .img-item {
   margin: 0.3rem;
+  width: 100px;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),
