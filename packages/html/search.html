@@ -163,10 +163,15 @@
     <main class="main">
       <!-- ===================== Search Form ===================== -->
       <section class="home" id="home">
-        <div class="demo container grid">
+        <div class="demo section container grid">
           <form action="#">
-            <div>
+            <div class="search-container">
               <div>
+                <h2 class="section__title search__section-title">
+                  Search Your Foot Mate
+                </h2>
+              </div>
+              <div class="search-bar">
                 <div class="wrapper">
                   <div class="search_box">
                     <div class="dropdown">
@@ -184,53 +189,50 @@
                   </div>
                 </div>
               </div>
-              <div>
-                <label for="speed">Select a speed</label>
-                <select name="speed" id="speed">
-                  <option>Slower</option>
-                  <option>Slow</option>
-                  <option selected="selected">Medium</option>
-                  <option>Fast</option>
-                  <option>Faster</option>
-                </select>
-              </div>
+              <div class="sub-search">
+                <div class="style-selection search_item">
+                  <label class="search_labels" for="salutation">STYLE:</label>
+                  <select class="select-item" name="salutation" id="salutation">
+                    <option disabled selected>Please pick one</option>
+                    <option>Running</option>
+                    <option>Training</option>
+                    <option>Casuals</option>
+                  </select>
+                </div>
 
-              <div>
-                <label for="files">Select a file</label>
-                <select name="files" id="files">
-                  <optgroup label="Scripts">
-                    <option value="jquery">jQuery.js</option>
-                    <option value="jqueryui">ui.jQuery.js</option>
-                  </optgroup>
-                  <optgroup label="Other files">
-                    <option value="somefile">Some unknown file</option>
-                    <option value="someotherfile">
-                      Some other file with a very long option text
-                    </option>
-                  </optgroup>
-                </select>
-              </div>
+                <div class="gender-selection search_item">
+                  <label class="search_labels" for="speed">GENDER:</label>
+                  <select class="select-item" name="speed" id="speed">
+                    <option>Men</option>
+                    <option>Women</option>
+                    <option selected="selected">Universal</option>
+                  </select>
+                </div>
 
-              <div>
-                <label for="number">Select a number</label>
-                <select name="number" id="number">
-                  <option>1</option>
-                  <option selected="selected">2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
+                <div class="color-selection search_item">
+                  <label class="search_labels" for="files">COLOR:</label>
+                  <select class="select-item" name="files" id="files">
+                    <option>Black</option>
+                    <option selected="selected">Grey</option>
+                    <option>White</option>
+                    <option>Pink</option>
+                    <option>Orange</option>
+                    <option>Green</option>
+                  </select>
+                </div>
 
-              <label for="salutation">Select a title</label>
-              <select name="salutation" id="salutation">
-                <option disabled selected>Please pick one</option>
-                <option>Mr.</option>
-                <option>Mrs.</option>
-                <option>Dr.</option>
-                <option>Prof.</option>
-                <option>Other</option>
-              </select>
+                <div class="size-selection search_item">
+                  <label class="search_labels" for="number">SIZE:</label>
+                  <select class="select-item" name="number" id="number">
+                    <option>4</option>
+                    <option selected="selected">5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -238,7 +240,7 @@
 
       <!--==================== NEW ====================-->
       <section class="new section container" id="new">
-        <h2 class="section__title">Best Buys!</h2>
+        <h2 class="section__title">Best Sellers!</h2>
 
         <div class="new__container">
           <div class="swiper new-swiper">
