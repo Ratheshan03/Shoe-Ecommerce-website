@@ -147,8 +147,8 @@
     {
       "id": "shoe13",
       "name": "Air Jordan 1 Zoom Air Comfort",
-      "gender": "Men",
-      "style": "Universal",
+      "gender": "Universal",
+      "style": "Casuals",
       "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5],
       "price": 259.0,
       "colour": "Black",
