@@ -27,7 +27,7 @@
     {
       "id": "shoe3",
       "name": "Nike Renew Run 2",
-      "gender": "Men",
+      "gender": "Universal",
       "style": "Running",
       "sizes": [7, 7.5, 8, 8.5, 9, 9.5],
       "price": 159.0,
@@ -111,7 +111,7 @@
     {
       "id": "shoe10",
       "name": "Air Jordan 1 Low SE",
-      "gender": "Women",
+      "gender": "Universal",
       "style": "Casuals",
       "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8],
       "price": 69.0,
@@ -148,7 +148,7 @@
       "id": "shoe13",
       "name": "Air Jordan 1 Zoom Air Comfort",
       "gender": "Men",
-      "style": "Casuals",
+      "style": "Universal",
       "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5],
       "price": 259.0,
       "colour": "Black",

@@ -190,50 +190,52 @@
             </div>
             <div class="sub-search grid">
               <div class="style-selection search_item">
-                <label class="search_labels" for="salutation">STYLE:</label>
+                <label class="search_labels" for="style">STYLE:</label>
                 <select
                   class="select-item"
-                  name="salutation"
-                  id="salutation"
+                  name="style"
+                  id="style"
                   aria-placeholder="Please pick one"
                 >
                   <!-- <option disabled selected>Please pick one</option> -->
-                  <option>Running</option>
-                  <option>Training</option>
-                  <option>Casuals</option>
+                  <option value="Running">Running</option>
+                  <option value="Training">Training</option>
+                  <option value="Casuals">Casuals</option>
                 </select>
               </div>
 
               <div class="gender-selection search_item">
-                <label class="search_labels" for="speed">GENDER:</label>
-                <select class="select-item" name="speed" id="speed">
-                  <option>Men</option>
-                  <option>Women</option>
-                  <option selected="selected">Universal</option>
+                <label class="search_labels" for="gender">GENDER:</label>
+                <select class="select-item" name="gender" id="gender">
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+                  <option value="Universal" selected="selected">
+                    Universal
+                  </option>
                 </select>
               </div>
 
               <div class="color-selection search_item">
-                <label class="search_labels" for="files">COLOR:</label>
-                <select class="select-item" name="files" id="files">
-                  <option>Black</option>
-                  <option selected="selected">Grey</option>
-                  <option>White</option>
-                  <option>Pink</option>
-                  <option>Orange</option>
-                  <option>Green</option>
+                <label class="search_labels" for="color">COLOR:</label>
+                <select class="select-item" name="color" id="color">
+                  <option value="Black">Black</option>
+                  <option value="Grey" selected="selected">Grey</option>
+                  <option value="white">White</option>
+                  <option value="Pink">Pink</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Green">Green</option>
                 </select>
               </div>
 
               <div class="size-selection search_item">
-                <label class="search_labels" for="number">SIZE:</label>
-                <select class="select-item" name="number" id="number">
-                  <option>4</option>
-                  <option selected="selected">5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
+                <label class="search_labels" for="size">SIZE:</label>
+                <select class="select-item" name="size" id="size">
+                  <option value="4">4</option>
+                  <option value="5" selected="selected">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
                 </select>
               </div>
             </div>
@@ -248,7 +250,6 @@
                   style="border: 0; color: #f6931f; font-weight: bold"
                 />
               </p>
-
               <div
                 class="slide-range"
                 id="slider-range"
@@ -260,6 +261,7 @@
                 class="ui-button ui-widget ui-corner-all sub-btn"
                 type="submit"
                 value="FILTER CHANGES"
+                id="submit-btn"
               />
             </div>
           </form>
@@ -268,34 +270,27 @@
 
       <!--=================== Results =====================-->
 
-      <section class="new section container" id="new">
-        <h2 class="section__title">Best Sellers!</h2>
+      <section class="results section container">
+        <h2 class="section__title">Results</h2>
 
         <div class="new__container">
-          <div class="swiper new-swiper">
-            <div class="swiper-wrapper">
-              <article class="new__card swiper-slide">
-                <img
-                  src="../img/s1.png"
-                  alt=""
-                  class="new__img"
-                  id="new__img"
-                />
+          <article class="new__card swiper-slide">
+            <div id="result-img"></div>
 
-                <div class="new__data">
-                  <h3 class="new__title" id="new__title">Longines rose</h3>
-                  <span class="new__price" id="new__price">$980</span>
-                </div>
-
-                <button class="button new__button">More Details</button>
-              </article>
+            <div class="new__data">
+              <h3 class="new__title" id="new__title"></h3>
+              <span class="new__price" id="new__price"></span>
             </div>
-          </div>
+
+            <button class="button new__button">
+              <a href="" id="shoe-page">More details</a>
+            </button>
+          </article>
         </div>
       </section>
 
       <!--==================== NEW ====================-->
-      <section class="new section container" id="new">
+      <section class="new section container">
         <h2 class="section__title">Best Sellers!</h2>
 
         <div class="new__container">

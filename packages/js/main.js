@@ -1,17 +1,6 @@
 /*================ JQuery =================*/
+
 $(document).ready(function () {
-  $(".default_option").click(function () {
-    $(".dropdown ul").addClass("active");
-  });
-
-  $(".dropdown ul li").click(function () {
-    var text = $(this).text();
-    $(".default_option").text(text);
-    $(".dropdown ul").removeClass("active");
-  });
-});
-
-$(function () {
   $("#slider-range").slider({
     range: true,
     min: 0,
@@ -27,7 +16,72 @@ $(function () {
       " - $" +
       $("#slider-range").slider("values", 1)
   );
+
+  $(".default_option").click(function () {
+    $(".dropdown ul").addClass("active");
+  });
+
+  $(".dropdown ul li").click(function () {
+    var text = $(this).text();
+    $(".default_option").text(text);
+    $(".dropdown ul").removeClass("active");
+  });
+
+  //* Retrieving Results *//
+  $("#submit-btn").on("click", function (e) {
+    var style = $("#style").val();
+    var gender = $("#gender").val();
+    var size = $("#size").val();
+    var color = $("#color").val();
+    var price = $("#price").val();
+
+    var output = "<ul>";
+
+    var jsonURL = "shoes.json";
+
+    for (var i in (jsonURL.shoes,
+    function (json) {
+      if (
+        style == json.shoes[i].style ||
+        gender == json.shoes[i].gender ||
+        size == json.shoes[i].sizes ||
+        color == json.shoes[i].color ||
+        price == json.shoes[i].price
+      ) {
+        imgList += '<li><img src="' + json.shoes[i].picture + '"></li>';
+        output += "<li>" + json.shoes[i].name + "</li>";
+      }
+    }));
+
+    document.getElementById("#new__title").innerHTML = output;
+  });
 });
+
+//* -------------------- Shoe Page ------------------- *//
+
+const imgs = document.querySelectorAll(".img-select a");
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+  imgItem.addEventListener("click", (event) => {
+    event.preventDefault();
+    imgId = imgItem.dataset.id;
+    slideImage();
+  });
+});
+
+function slideImage() {
+  const displayWidth = document.querySelector(
+    ".img-showcase img:first-child"
+  ).clientWidth;
+
+  document.querySelector(".img-showcase").style.transform = `translateX(${
+    -(imgId - 1) * displayWidth
+  }px)`;
+}
+
+window.addEventListener("resize", slideImage);
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),
@@ -97,30 +151,6 @@ let newSwiper = new Swiper(".new-swiper", {
     },
   },
 });
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
-    }
-  });
-}
-window.addEventListener("scroll", scrollActive);
 
 /*=============== SHOW SCROLL UP ===============*/
 function scrollUp() {

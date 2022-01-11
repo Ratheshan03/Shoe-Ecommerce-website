@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+
+    <!--=============== jquery-ui CSS ================-->
     <link
-      rel="shortcut icon"
-      href="./packages/img/favicon.png"
-      type="image/x-icon"
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
     />
 
     <!--=============== BOXICONS ===============-->
@@ -30,21 +32,20 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">
-          <i class="bx bxs-joystick nav__logo-icon"></i> CARNAGE SHOES
+          <i class="bx bxs-shopping-bag nav__logo-icon"></i> CARNAGE SHOES
         </a>
-
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
               <a href="./index.html" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
-              <a href="./packages/html/search.html" class="nav__link">Shop</a>
+              <a href="./packages/html/search.html" class="nav__link"
+                >Shop</a
+              >
             </li>
             <li class="nav__item">
-              <a href="./packages/html/contact.html" class="nav__link"
-                >Contact</a
-              >
+              <a href="./packages/html/contact.html" class="nav__link">Contact</a>
             </li>
           </ul>
 
@@ -74,7 +75,7 @@
       <div class="cart__container">
         <article class="cart__card">
           <div class="cart__box">
-            <img src="./packages/img/featured1.png" alt="" class="cart__img" />
+            <img src="./packages/img/air-jordan-1-low-se-shoes.png" alt="" class="cart__img" />
           </div>
 
           <div class="cart__details">
@@ -101,7 +102,7 @@
 
         <article class="cart__card">
           <div class="cart__box">
-            <img src="./packages/img/featured3.png" alt="" class="cart__img" />
+            <img src="./packages/img/air-jordan-1-low-se-shoes.png" alt="" class="cart__img" />
           </div>
 
           <div class="cart__details">
@@ -128,7 +129,7 @@
 
         <article class="cart__card">
           <div class="cart__box">
-            <img src="./packages/img/new1.png" alt="" class="cart__img" />
+            <img src="./packages/img/air-max-2021-shoes-2hZTzG-removebg-preview.png" alt="" class="cart__img" />
           </div>
 
           <div class="cart__details">
@@ -239,7 +240,7 @@
       </section>
 
       <!--==================== BRANDS ====================-->
-      <section class="products section container" id="products">
+      <section class="products section container" >
         <h2 class="section__title">PARTNERED BRANDS</h2>
 
         <div class="products__container grid">
@@ -421,10 +422,10 @@
       </section>
 
       <!--==================== NEW ====================-->
-      <section class="new section container" id="new">
+      <section class="new section container" >
         <h2 class="section__title">New Arrivals</h2>
 
-        <div class="new__container">
+        <div class="new__container"></div>
           <div class="swiper new-swiper">
             <div class="swiper-wrapper">
               <article class="new__card swiper-slide">
@@ -601,6 +602,11 @@
 
     <!--=============== SWIPER JS ===============-->
     <script src="./packages/js/swiper-bundle.min.js"></script>
+
+    <!--================== jquery ======================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
 
     <!--=============== MAIN JS ===============-->
     <script src="./packages/js/main.js"></script>
