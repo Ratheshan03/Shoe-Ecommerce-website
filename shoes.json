@@ -5,11 +5,11 @@
       "name": "Nike Air Zoom Pegasus 38",
       "gender": "Men",
       "style": "Running",
-      "sizes": [6, 6.5, 7, 7.5, 8, 8.5],
+      "size": [6, 6.5, 7, 7.5, 8, 8.5],
       "price": 175.0,
-      "colour": "Orange",
+      "color": "Orange",
       "description": "A workhorse built to help power you through every mile of the race, the Nike Air Zoom Pegasus 38 continues to put a spring in your step, using the same responsive foam as its predecessor.",
-      "picture": "./packages/img/shoe1/shoe1.png",
+      "src": "./packages/img/shoe1/shoe1.png",
       "url": "./packages/html/shoes/shoe1.html"
     },
     {
@@ -17,11 +17,11 @@
       "name": "Nike React Miler 2",
       "gender": "Men",
       "style": "Running",
-      "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9],
+      "size": [6, 6.5, 7, 7.5, 8, 8.5, 9],
       "price": 189.0,
-      "colour": "Black",
+      "color": "Black",
       "description": "When running becomes a daily habit, stability and comfort are crucial.The Nike React Miler 2 delivers—bringing back the soft cushioning and intuitive design of its predecessor.",
-      "picture": "./packages/img/shoe2/shoe2.png",
+      "src": "./packages/img/shoe2/shoe2.png",
       "url": "shoes/shoe2.html"
     },
     {
@@ -29,11 +29,11 @@
       "name": "Nike Renew Run 2",
       "gender": "Universal",
       "style": "Running",
-      "sizes": [7, 7.5, 8, 8.5, 9, 9.5],
+      "size": [7, 7.5, 8, 8.5, 9, 9.5],
       "price": 159.0,
-      "colour": "Grey",
+      "color": "Grey",
       "description": "When running becomes a daily goal, you want a running shoe that's tough on the road and soft on your feet.Designed with better shaping around the collar and tongue to help support your foot, every step feels supported.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -41,11 +41,11 @@
       "name": "Nike Air Zoom Pegasus 38",
       "gender": "Women",
       "style": "Running",
-      "sizes": [4.5, 5, 5.5, 6, 7],
+      "size": [4.5, 5, 5.5, 6, 7],
       "price": 139.0,
-      "colour": "Pink",
+      "color": "Pink",
       "description": "The road is your runway. Get ready to take flight in the workhorse with wings. Back with extra bounce that's perfect for hitting the tarmac. Whether you're racking up everyday miles or on your long run, feel the spring in your step with the same cushioned support as its predecessor.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -53,11 +53,11 @@
       "name": "Nike Zoom Fly 4",
       "gender": "Women",
       "style": "Running",
-      "sizes": [4.5, 5, 6, 6.5, 7],
+      "size": [4.5, 5, 6, 6.5, 7],
       "price": 89.0,
-      "colour": "Green",
+      "color": "Green",
       "description": "Take it to the streets and find your tempo. From the moment you lace up, the webbing on the lacing system wraps around your foot for a secure feel from start to finish. The added flex feels highly responsive and secure with every step.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -65,11 +65,11 @@
       "name": "Nike Legend Essential 2 Premium",
       "gender": "Women",
       "style": "Training",
-      "sizes": [5, 5.5, 6, 6.5, 7],
+      "size": [5, 5.5, 6, 6.5, 7],
       "price": 119.0,
-      "colour": "White",
+      "color": "White",
       "description": "The Nike Legend Essential 2 Premium is equipped with a flat, stable heel, flexibility under the toes and side-to-side support. With tons of grip, you're ready to lift, HIIT, conquer a class or get stronger at the machines.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -77,11 +77,11 @@
       "name": "Nike SuperRep Go 2",
       "gender": "Men",
       "style": "Training",
-      "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9],
+      "size": [6, 6.5, 7, 7.5, 8, 8.5, 9],
       "price": 229.0,
-      "colour": "White",
+      "color": "White",
       "description": "The Nike SuperRep Go 2 with speckle accents combines lightweight cushioning underfoot and breathable mesh up top to get you moving comfortably in circuit-based fitness classes or while streaming workouts at home.With the supportive arc on the side and extra flexibility in the sole, you're ready to go for 1 more rep",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -89,11 +89,11 @@
       "name": "Nike Air Zoom SuperRep 2",
       "gender": "Men",
       "style": "Training",
-      "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
+      "size": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10],
       "price": 299.0,
-      "colour": "Grey",
+      "color": "Grey",
       "description": "The Nike Air Zoom SuperRep 2 is designed for circuit training, HIIT and other fast-paced exercise.Layers of support team up with Zoom Air cushioning to keep your foot locked in and comfortable as you lunge, jump and push your way through every rep.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -101,11 +101,11 @@
       "name": "Nike City Rep TR",
       "gender": "Women",
       "style": "Training",
-      "sizes": [4.5, 5, 5.5, 6, 6.5],
+      "size": [4.5, 5, 5.5, 6, 6.5],
       "price": 79.0,
-      "colour": "White",
+      "color": "White",
       "description": "Refreshing our bestselling Orinoco profile, a lace-up ankle boot that stays all day wearable. The premium dark olive leather upper stays classic and crafted while the cleated sole with 3cm heel feels durable and adds grip. Perfect to step into the season with casual style.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -113,11 +113,11 @@
       "name": "Jordan Series .02 'Dear Deloris'",
       "gender": "Universal",
       "style": "Casuals",
-      "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8],
+      "size": [5, 5.5, 6, 6.5, 7, 7.5, 8],
       "price": 69.0,
-      "colour": "White",
+      "color": "White",
       "description": "Michael Jordan's mum Deloris was hugely influential in his life. For a young man learning to fly, she helped him stay grounded and focused, to always remember where he came from and to follow through on his commitments. The vulcanised Jordan Series .02 'Dear Deloris' continues the story of how Mike became the greatest of all time with a tribute to his mum.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -125,11 +125,11 @@
       "name": "Jordan Zoom Separate PF",
       "gender": "Men",
       "style": "Casuals",
-      "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5],
+      "size": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5],
       "price": 89.0,
-      "colour": "Black",
+      "color": "Black",
       "description": "Luka's step-back shot is the muse for the Jordan Zoom Separate PF, a lightweight low-top shoe designed to help you take control on the court.The cushioning is firmer along the outside of the foot and softer along the inside, so you can lean in hard while banking and changing directions.A Zoom Air unit provides responsive cushioning as you aim for the basket.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -137,11 +137,11 @@
       "name": "Jordan Series-3",
       "gender": "Women",
       "style": "Casuals",
-      "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8],
+      "size": [5, 5.5, 6, 6.5, 7, 7.5, 8],
       "price": 119.0,
-      "colour": "White",
+      "color": "White",
       "description": "Inspired by Mike's back-garden battles with his older brother Larry, the Jordan Series references the legendary siblings throughout the design. The rubber sole offers more than just impressive traction—it also tells a story about how MJ came to be #23. Look for the hidden reminder to 'Swing for the Fence'—a direct quote from Larry to his famous bro.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
     {
@@ -149,11 +149,11 @@
       "name": "Air Jordan 1 Zoom Air Comfort",
       "gender": "Universal",
       "style": "Casuals",
-      "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5],
+      "size": [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5],
       "price": 259.0,
-      "colour": "Black",
+      "color": "Black",
       "description": "Step into comfort with the Air Jordan 1 Zoom Air Comfort. Refined to make one of history's most iconic sneakers more wearable, it combines full-grain leather in the upper with a cosy lining and responsive cushioning.",
-      "picture": "images/shoe2_0.jpg",
+      "src": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     }
   ]

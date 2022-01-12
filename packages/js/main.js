@@ -30,6 +30,7 @@ $(document).ready(function () {
   //* Retrieving Results *//
   $("#submit-btn").on("click", function (e) {
     e.preventDefault();
+    document.getElementById("new__container").style.display = "block";
     var style = $("#style").val();
     var gender = $("#gender").val();
     var size = $("#size").val();
@@ -42,13 +43,24 @@ $(document).ready(function () {
       var shoes = [];
       $.getJSON("../../shoes.json", function (data) {
         $.each(data.shoes, function (i, f) {
-          var titleOutput = "<h3 class='new__title' >" + f.name + "</h3>";
-          var priceOutput = "<span class='new__price'>" + f.price + "<span>";
-          var imgList = '<img class="new__img" src="' + f.picture + '" >';
+          if (
+            style == data.shoes[i].style ||
+            gender == data.shoes[i].gender ||
+            size == data.shoes[i].size ||
+            color == data.shoes[i].color ||
+            price == data.shoes[i].price
+          ) {
+            var imgList =
+              "<img class='new__img' src='" + data.shoes[i].src + "' />";
+            var titleOutput =
+              "<h3 class='new__title' >" + data.shoes[i].name + "</h3>";
+            var priceOutput =
+              "<span class='new__price'>" + data.shoes[i].price + "<span>";
 
-          $(imgList).appendTo("#new__card");
-          $(titleOutput).appendTo("#new__data");
-          $(priceOutput).appendTo("#new__data");
+            $(imgList).appendTo("#new__card");
+            $(titleOutput).appendTo("#new__data");
+            $(priceOutput).appendTo("#new__data");
+          }
         });
       });
     });
@@ -68,6 +80,10 @@ $(document).ready(function () {
     // }));
 
     // document.getElementById("#new__title").innerHTML = output;
+  });
+  $("#reset-btn").on("click", function (e) {
+    document.getElementById("form-search").reset();
+    document.getElementById("new__container").style.display = "none";
   });
 });
 
