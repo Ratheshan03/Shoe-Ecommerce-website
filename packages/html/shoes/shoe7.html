@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+
+    <!--=============== jquery-ui CSS ================-->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../../css/styles.css" />
+
+    <title>CARNAGE</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <i class="bx bxs-watch nav__logo-icon"></i>CARNAGE SHOES
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="../../../index.html" class="nav__link">HOME</a>
+            </li>
+            <li class="nav__item">
+              <a href="../../html/search.html" class="nav__link active-link"
+                >SHOP</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="../../html/contact.html" class="nav__link">CONTACT</a>
+            </li>
+          </ul>
+
+          <div class="nav__close" id="nav-close">
+            <i class="bx bx-x"></i>
+          </div>
+        </div>
+
+        <div class="nav__btns">
+          <div class="nav__shop" id="cart-shop">
+            <i class="bx bx-shopping-bag"></i>
+          </div>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== CART ====================-->
+    <div class="cart" id="cart">
+      <i class="bx bx-x cart__close" id="cart-close"></i>
+
+      <h2 class="cart__title-center">My Cart</h2>
+
+      <div class="cart__container">
+        <article class="cart__card">
+          <div class="cart__box">
+            <img
+              src="../../img/air-jordan-1-low-se-shoes.png"
+              alt=""
+              class="cart__img"
+            />
+          </div>
+
+          <div class="cart__details">
+            <h3 class="cart__title">Jazzmaster</h3>
+            <span class="cart__price">$1050</span>
+
+            <div class="cart__amount">
+              <div class="cart__amount-content">
+                <span class="cart__amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+
+                <span class="cart__amount-number">1</span>
+
+                <span class="cart__amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+
+              <i class="bx bx-trash-alt cart__amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart__card">
+          <div class="cart__box">
+            <img
+              src="../../img/air-jordan-1-low-se-shoes.png"
+              alt=""
+              class="cart__img"
+            />
+          </div>
+
+          <div class="cart__details">
+            <h3 class="cart__title">Rose Gold</h3>
+            <span class="cart__price">$850</span>
+
+            <div class="cart__amount">
+              <div class="cart__amount-content">
+                <span class="cart__amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+
+                <span class="cart__amount-number">1</span>
+
+                <span class="cart__amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+
+              <i class="bx bx-trash-alt cart__amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart__card">
+          <div class="cart__box">
+            <img
+              src="../../img/air-jordan-1-low-se-shoes.png"
+              alt=""
+              class="cart__img"
+            />
+          </div>
+
+          <div class="cart__details">
+            <h3 class="cart__title">Longines Rose</h3>
+            <span class="cart__price">$980</span>
+
+            <div class="cart__amount">
+              <div class="cart__amount-content">
+                <span class="cart__amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+
+                <span class="cart__amount-number">1</span>
+
+                <span class="cart__amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+
+              <i class="bx bx-trash-alt cart__amount-trash"></i>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="cart__prices">
+        <span class="cart__prices-item">3 items</span>
+        <span class="cart__prices-total">$2880</span>
+      </div>
+    </div>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <section class="featured section" id="featured">
+        <h1 class="heading section__title"><span>featured</span> products</h1>
+        <div class="card-wrapper">
+          <div class="card">
+            <!-- card left -->
+            <div class="product-imgs">
+              <div class="img-display">
+                <div class="img-showcase">
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/shoe7.png"
+                    alt="shoe image"
+                  />
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/s1.png"
+                    alt="shoe image"
+                  />
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/s2.png"
+                    alt="shoe image"
+                  />
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/s3.png"
+                    alt="shoe image"
+                  />
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/s4.png"
+                    alt="shoe image"
+                  />
+                  <img
+                    class="show-image"
+                    src="../../img/shoe7/s5.png"
+                    alt="shoe image"
+                  />
+                </div>
+              </div>
+              <div class="img-select">
+                <div class="img-item">
+                  <a href="#" data-id="1">
+                    <img src="../../img/shoe7/shoe7.png" alt="shoe image" />
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="2">
+                    <img src="../../img/shoe7/s1.png" alt="shoe image" />
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="3">
+                    <img src="../../img/shoe7/s2.png" alt="shoe image" />
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="4">
+                    <img src="../../img/shoe7/s3.png" alt="shoe image" />
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="5">
+                    <img src="../../img/shoe7/s4.png" alt="shoe image" />
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="6">
+                    <img src="../../img/shoe7/s5.png" alt="shoe image" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- card right -->
+            <div class="product-content">
+              <h2 class="product-title">Nike SuperRep Go 2</h2>
+
+              <div class="product-price">
+                <p class="new-price">New Price: <span>$219.00</span></p>
+              </div>
+
+              <div class="product-detail">
+                <h2>DESCRIPTION</h2>
+                <p>
+                  The Nike SuperRep Go 2 with speckle accents combines
+                  lightweight cushioning underfoot and breathable mesh up top to
+                  get you moving comfortably in circuit-based fitness classes or
+                  while streaming workouts at home.With the supportive arc on
+                  the side and extra flexibility in the sole, you're ready to go
+                  for 1 more rep
+                </p>
+                <ul class="sub-details">
+                  <li>Style: <span>Training</span></li>
+                  <li>Color: <span>White/ Blue/ Grey </span></li>
+                  <li>
+                    Sizes:
+                    <span class="size-num">6, 6.5, 7, 7.5, 8, 8.5, 9</span>
+                  </li>
+                  <li>Available: <span>in stock</span></li>
+                  <li>Shipping Area: <span>All over the world</span></li>
+                  <li>Shipping Fee: <span>Free</span></li>
+                </ul>
+              </div>
+
+              <div class="purchase-info">
+                <input type="number" min="0" value="1" />
+                <button type="button" class="btn">
+                  Add to Favourites <i class="fas fa-shopping-cart"></i>
+                </button>
+                <button type="button" class="btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story section container" id="story">
+        <div class="story__container">
+          <h2 class="section__title story__section-title">More Details</h2>
+          <div id="tabs">
+            <ul class="tabs">
+              <li><a href="#tabs-1">PRODUCT DETAILS</a></li>
+              <li><a href="#tabs-2">PAYMENT OPTIONS</a></li>
+              <li><a href="#tabs-3">DELIVERY & RETURN</a></li>
+            </ul>
+            <div id="tabs-1">
+              <div class="story__data">
+                <h1 class="story__title">SHOE DETAILS</h1>
+
+                <p class="story__description">
+                  A workhorse built to help power you through every mile of the
+                  race, the Nike Air Zoom Pegasus 38 continues to put a spring
+                  in your step, using the same responsive foam as its
+                  predecessor.
+                </p>
+                <br />
+                <div class="experience__content grid">
+                  <div class="experience__data">
+                    <h2 class="experience__number">40</h2>
+                    <span class="experience__description"
+                      >Years <br />
+                      of classics</span
+                    >
+                  </div>
+
+                  <div class="experience__data">
+                    <h2 class="experience__number">6</h2>
+                    <span class="experience__description"
+                      >Versions <br />
+                      and beyond</span
+                    >
+                  </div>
+
+                  <div class="experience__data">
+                    <h2 class="experience__number">65k+</h2>
+                    <span class="experience__description">
+                      Unites<br />were Sold
+                    </span>
+                  </div>
+                </div>
+                <br />
+                <p class="story__description">
+                  The Nike Pegasus 38 is a plush daily trainer with a stable
+                  midsole and a peppy ride. Your workhorse with wings returns
+                  with a mashup of classic Nike logos. The Nike Air Zoom Pegasus
+                  38 has that extra bounce for long, short or everyday runs.
+                  It's cool and breathable with a wider fit at the toes and
+                  plenty of cushioned support to help you fly past your personal
+                  goals.
+                </p>
+              </div>
+            </div>
+            <div id="tabs-2">
+              <div class="story__images">
+                <div class="footer__content">
+                  <h3 class="footer__title">PAYMENT OPTIONS</h3>
+                  <p class="story__description">
+                    Payments are handled securely by Paypal.<br />
+                    We accept the following payments.
+                  </p>
+                  <div class="footer__cards">
+                    <img
+                      src="../../img/card1.png"
+                      alt=""
+                      class="footer__card"
+                    />
+                    <img
+                      src="../../img/card2.png"
+                      alt=""
+                      class="footer__card"
+                    />
+                    <img
+                      src="../../img/card3.png"
+                      alt=""
+                      class="footer__card"
+                    />
+                    <img
+                      src="../../img/card4.png"
+                      alt=""
+                      class="footer__card"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tabs-3">
+              <div class="story__data">
+                <h1 class="story__title">Delivery and Returns</h1>
+
+                <p class="story_details">
+                  <li class="list-details">
+                    <strong>£6.95</strong> DPD Next Day Delivery (Order before
+                    7pm)
+                  </li>
+                  <li class="list-details">
+                    <strong>FREE</strong> Collect from store (Within 4 working
+                    days)
+                  </li>
+                  <li class="list-details">
+                    <strong>£3.95</strong> Standard Delivery (Within 4 working
+                    days)
+                  </li>
+                  <li class="list-details">
+                    <strong>£3.95</strong> Collect Plus (Within 5 working days)
+                  </li>
+                  <li class="list-details">
+                    <strong>£5.95</strong> Hermes Express Delivery (Within 2
+                    working days)
+                  </li>
+                  <li class="list-details">
+                    <strong>FREE</strong> Returns & Exchanges on all Items
+                  </li>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+      <div class="footer__container container grid">
+        <div class="footer__content">
+          <h3 class="footer__title">Our information</h3>
+
+          <ul class="footer__list">
+            <li>0307 - Kandy</li>
+            <li>Wonder of Asia</li>
+            <li>076-5455023</li>
+          </ul>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">About Us</h3>
+
+          <ul class="footer__links">
+            <li>
+              <a href="#" class="footer__link">Support Center</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Customer Support</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Copy Right</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Product</h3>
+
+          <ul class="footer__links">
+            <li>
+              <a href="#" class="footer__link">Road bikes</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Mountain bikes</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Electric</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Accesories</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Social</h3>
+
+          <ul class="footer__social">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="bx bxl-facebook"></i>
+            </a>
+
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="bx bxl-twitter"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="footer__social-link"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <span class="footer__copy">&#169; Ratheshan03. All rigths reserved</span>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="../../js/swiper-bundle.min.js"></script>
+
+    <!--================== jquery ======================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="../../js/main.js"></script>
+  </body>
+</html>
