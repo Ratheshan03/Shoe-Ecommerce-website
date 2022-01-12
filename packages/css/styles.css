@@ -1569,6 +1569,24 @@ button {
   background-color: rgb(175, 175, 175);
 }
 
+.more-detail-btn {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 182, 155, 0.493);
+  margin-top: 8px;
+  color: white;
+}
+
+.more-detail-btn:hover {
+  background-color: rgba(3, 68, 65, 0.76);
+  color: black !important;
+}
+
+.more-detail-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 .wrapper {
   width: 70vw;
   display: flex;

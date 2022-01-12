@@ -64,11 +64,11 @@ $(document).ready(function () {
                             "<h3 class='products__title'>" +
                             data.shoes[i].name +
                             "</h3>" +
-                            "<span class='products__price'>" +
+                            "<p class='products__price'>" +
                             "$" +
                             data.shoes[i].price +
-                            "</span>" +
-                            "<button class='button button--gray button--small'><a href='" +
+                            "</p>" +
+                            "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
                             data.shoes[i].url +
                             "'>More Details</a></button></article>";
                         }
@@ -82,18 +82,6 @@ $(document).ready(function () {
     });
   });
 });
-// $("#reset-btn").on("click", function (e) {
-//   document.getElementById("form-search").reset();
-//   document.getElementById("new__data").innerHTML = "";
-//   document.getElementById("new__card").innerHTML = "";
-//   var imgList = "<img class='new__img' src='" + f.src + "' />";
-//   var titleOutput = "<h3 class='new__title' >" + f.name + "</h3>";
-//   var priceOutput = "<span class='new__price'>" + f.price + "<span>";
-
-//   $(imgList).appendTo("#new__card");
-//   $(titleOutput).appendTo("#new__data");
-//   $(priceOutput).appendTo("#new__data");
-// });
 
 //* -------------------- Shoe Page ------------------- *//
 
