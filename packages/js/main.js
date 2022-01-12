@@ -29,6 +29,10 @@ $(document).ready(function () {
     );
   });
 
+  $(function () {
+    $("#tabs").tabs();
+  });
+
   //* Retrieving Results *//
   $("#submit-btn").on("click", function (e) {
     var style = $("#style").val();
