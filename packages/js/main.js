@@ -1,22 +1,6 @@
 /*================ JQuery =================*/
 
 $(document).ready(function () {
-  $("#slider-range").slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [75, 300],
-    slide: function (event, ui) {
-      $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-    },
-  });
-  $("#amount").val(
-    "$" +
-      $("#slider-range").slider("values", 0) +
-      " - $" +
-      $("#slider-range").slider("values", 1)
-  );
-
   $(".default_option").click(function () {
     $(".dropdown ul").addClass("active");
   });
@@ -27,65 +11,85 @@ $(document).ready(function () {
     $(".dropdown ul").removeClass("active");
   });
 
+  $(function () {
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 300,
+      values: [50, 200],
+      slide: function (event, ui) {
+        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      },
+    });
+    $("#amount").val(
+      "$" +
+        $("#slider-range").slider("values", 0) +
+        " - $" +
+        $("#slider-range").slider("values", 1)
+    );
+  });
+
   //* Retrieving Results *//
   $("#submit-btn").on("click", function (e) {
-    e.preventDefault();
-    document.getElementById("new__container").style.display = "block";
     var style = $("#style").val();
     var gender = $("#gender").val();
     var size = $("#size").val();
     var color = $("#color").val();
-    var price = $("#price").val();
+    var minPrice = $("#slider-range").slider("option", "values")[0];
+    var maxPrice = $("#slider-range").slider("option", "values")[1];
+
     var output = "<ul>";
-    var jsonURL = "shoes.json";
-
-    $(function () {
-      var shoes = [];
-      $.getJSON("../../shoes.json", function (data) {
-        $.each(data.shoes, function (i, f) {
-          if (
-            style == data.shoes[i].style ||
-            gender == data.shoes[i].gender ||
-            size == data.shoes[i].size ||
-            color == data.shoes[i].color ||
-            price == data.shoes[i].price
-          ) {
-            var imgList =
-              "<img class='new__img' src='" + data.shoes[i].src + "' />";
-            var titleOutput =
-              "<h3 class='new__title' >" + data.shoes[i].name + "</h3>";
-            var priceOutput =
-              "<span class='new__price'>" + data.shoes[i].price + "<span>";
-
-            $(imgList).appendTo("#new__card");
-            $(titleOutput).appendTo("#new__data");
-            $(priceOutput).appendTo("#new__data");
-          }
-        });
-      });
+    $.getJSON("../shoes.json", function (data) {
+      for (var i in data.shoes) {
+        if (gender == data.shoes[i].gender || gender == "Any")
+          if (style == data.shoes[i].style || style == "Any")
+            if (size == data.shoes[i].sizes || size == "Any")
+              if (color == data.shoes[i].color || color == "Any")
+                if (
+                  data.shoes[i].price >= minPrice &&
+                  data.shoes[i].price <= maxPrice
+                ) {
+                  {
+                    {
+                      {
+                        {
+                          output +=
+                            "<img class='new__img' src=" +
+                            data.shoes[i].picture +
+                            ">" +
+                            "<h3 class='new__title' >" +
+                            data.shoes[i].name +
+                            "</h3>" +
+                            "<span class='new__price' >" +
+                            "£" +
+                            data.shoes[i].price +
+                            "</span>" +
+                            "<button><a href='" +
+                            data.shoes[i].url +
+                            "'>More Details</a></button>";
+                        }
+                      }
+                    }
+                  }
+                }
+      }
+      output += "</ul>";
+      document.getElementById("new__data").innerHTML = output;
     });
-
-    // for (var i in (jsonURL.shoes,
-    // function (json) {
-    //   if (
-    //     style == json.shoes[i].style ||
-    //     gender == json.shoes[i].gender ||
-    //     size == json.shoes[i].sizes ||
-    //     color == json.shoes[i].color ||
-    //     price == json.shoes[i].price
-    //   ) {
-    //     imgList += '<li><img src="' + json.shoes[i].picture + '"></li>';
-    //     output += "<li>" + json.shoes[i].name + "</li>";
-    //   }
-    // }));
-
-    // document.getElementById("#new__title").innerHTML = output;
-  });
-  $("#reset-btn").on("click", function (e) {
-    document.getElementById("form-search").reset();
-    document.getElementById("new__container").style.display = "none";
   });
 });
+// $("#reset-btn").on("click", function (e) {
+//   document.getElementById("form-search").reset();
+//   document.getElementById("new__data").innerHTML = "";
+//   document.getElementById("new__card").innerHTML = "";
+//   var imgList = "<img class='new__img' src='" + f.src + "' />";
+//   var titleOutput = "<h3 class='new__title' >" + f.name + "</h3>";
+//   var priceOutput = "<span class='new__price'>" + f.price + "<span>";
+
+//   $(imgList).appendTo("#new__card");
+//   $(titleOutput).appendTo("#new__data");
+//   $(priceOutput).appendTo("#new__data");
+// });
 
 //* -------------------- Shoe Page ------------------- *//
 

@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
     />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--=============== BOXICONS ===============-->
     <link
       rel="stylesheet"
@@ -21,7 +21,10 @@
 
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
-
+    <link
+      href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../css/styles.css" />
 
@@ -197,46 +200,57 @@
                   id="style"
                   aria-placeholder="Please pick one"
                 >
-                  <option disabled selected>Please pick one</option>
+                  <option disabled>Please pick one</option>
                   <option value="Running">Running</option>
                   <option value="Training">Training</option>
                   <option value="Casuals">Casuals</option>
+                  <option value="Any" selected>Any</option>
                 </select>
               </div>
 
               <div class="gender-selection search_item">
                 <label class="search_labels" for="gender">GENDER:</label>
                 <select class="select-item" name="gender" id="gender">
-                  <option disabled selected>Please pick one</option>
+                  <option disabled>Please pick one</option>
                   <option value="Men">Men</option>
                   <option value="Women">Women</option>
                   <option value="Universal">Universal</option>
+                  <option value="Any" selected>Any</option>
                 </select>
               </div>
 
               <div class="color-selection search_item">
                 <label class="search_labels" for="color">COLOR:</label>
                 <select class="select-item" name="color" id="color">
-                  <option disabled selected>Please pick one</option>
+                  <option disabled>Please pick one</option>
                   <option value="Black">Black</option>
                   <option value="Grey">Grey</option>
                   <option value="white">White</option>
                   <option value="Pink">Pink</option>
                   <option value="Orange">Orange</option>
                   <option value="Green">Green</option>
+                  <option value="Any" selected>Any</option>
                 </select>
               </div>
 
               <div class="size-selection search_item">
                 <label class="search_labels" for="size">SIZE:</label>
                 <select class="select-item" name="size" id="size">
-                  <option disabled selected>Please pick one</option>
+                  <option disabled>Please pick one</option>
                   <option value="4">4</option>
+                  <option value="4.5">4.5</option>
                   <option value="5">5</option>
+                  <option value="5.5">5.5</option>
                   <option value="6">6</option>
+                  <option value="6.5">6.5</option>
                   <option value="7">7</option>
+                  <option value="7.5">7.5</option>
                   <option value="8">8</option>
+                  <option value="8.5">8.5</option>
                   <option value="9">9</option>
+                  <option value="9.5">9.5</option>
+                  <option value="10">10</option>
+                  <option value="Any" selected>Any</option>
                 </select>
               </div>
             </div>
@@ -244,7 +258,7 @@
               <p class="search_labels">
                 <label for="amount">Price range:</label>
                 <input
-                  class="search-input-item"
+                  class="search-input-item goldSliderText"
                   type="text"
                   id="amount"
                   readonly
@@ -260,7 +274,7 @@
             <div class="submit-btn">
               <input
                 class="ui-button ui-widget ui-corner-all sub-btn"
-                type="submit"
+                type="button"
                 value="FILTER CHANGES"
                 id="submit-btn"
               />
@@ -281,16 +295,12 @@
         <h2 class="section__title">Results</h2>
 
         <div class="new__container" id="new__container">
-          <article class="new__card swiper-slide" id="new__card">
+          <article class="new__card swiper-slide">
             <div class="new__data" id="new__data">
               <!-- Product name -->
 
               <!-- Product Price -->
             </div>
-
-            <button class="button new__button">
-              <a href="" id="shoe-page">More details</a>
-            </button>
           </article>
         </div>
       </section>
