@@ -9,8 +9,8 @@
       "price": 175.0,
       "colour": "Orange",
       "description": "A workhorse built to help power you through every mile of the race, the Nike Air Zoom Pegasus 38 continues to put a spring in your step, using the same responsive foam as its predecessor.",
-      "picture": "../img/shoe1_0.jpg",
-      "url": "../html/shoes/shoe1.html"
+      "picture": "./packages/img/shoe1/shoe1.png",
+      "url": "./packages/html/shoes/shoe1.html"
     },
     {
       "id": "shoe2",
@@ -21,7 +21,7 @@
       "price": 189.0,
       "colour": "Black",
       "description": "When running becomes a daily habit, stability and comfort are crucial.The Nike React Miler 2 delivers—bringing back the soft cushioning and intuitive design of its predecessor.",
-      "picture": "images/shoe2_0.jpg",
+      "picture": "./packages/img/shoe2/shoe2.png",
       "url": "shoes/shoe2.html"
     },
     {
@@ -110,13 +110,13 @@
     },
     {
       "id": "shoe10",
-      "name": "Air Jordan 1 Low SE",
+      "name": "Jordan Series .02 'Dear Deloris'",
       "gender": "Universal",
       "style": "Casuals",
       "sizes": [5, 5.5, 6, 6.5, 7, 7.5, 8],
       "price": 69.0,
-      "colour": "Black",
-      "description": "The one and only Air Jordan 1 Low gets a new look and feel with this special utility edition.It's made from rugged, black and white canvas material, including the Swoosh logo.Red stitch detail adds a pop of colour along the overlays.",
+      "colour": "White",
+      "description": "Michael Jordan's mum Deloris was hugely influential in his life. For a young man learning to fly, she helped him stay grounded and focused, to always remember where he came from and to follow through on his commitments. The vulcanised Jordan Series .02 'Dear Deloris' continues the story of how Mike became the greatest of all time with a tribute to his mum.",
       "picture": "images/shoe2_0.jpg",
       "url": "shoes/shoe2.html"
     },
