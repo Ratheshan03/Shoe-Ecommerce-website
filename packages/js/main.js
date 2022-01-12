@@ -38,7 +38,7 @@ $(document).ready(function () {
     var minPrice = $("#slider-range").slider("option", "values")[0];
     var maxPrice = $("#slider-range").slider("option", "values")[1];
 
-    var output = "<ul>";
+    var output = " <div class='products__container grid'>";
     $.getJSON("../shoes.json", function (data) {
       for (var i in data.shoes) {
         if (gender == data.shoes[i].gender || gender == "Any")
@@ -54,27 +54,27 @@ $(document).ready(function () {
                       {
                         {
                           output +=
-                            "<img class='new__img' src=" +
+                            "<article class='products__card'><img class='products__img' alt='product' src=" +
                             data.shoes[i].picture +
                             ">" +
-                            "<h3 class='new__title' >" +
+                            "<h3 class='products__title'>" +
                             data.shoes[i].name +
                             "</h3>" +
-                            "<span class='new__price' >" +
-                            "£" +
+                            "<span class='products__price'>" +
+                            "$" +
                             data.shoes[i].price +
                             "</span>" +
-                            "<button><a href='" +
+                            "<button class='button button--gray button--small'><a href='" +
                             data.shoes[i].url +
-                            "'>More Details</a></button>";
+                            "'>More Details</a></button></article>";
                         }
                       }
                     }
                   }
                 }
       }
-      output += "</ul>";
-      document.getElementById("new__data").innerHTML = output;
+      output += "</div>";
+      document.getElementById("products_list").innerHTML = output;
     });
   });
 });
