@@ -1012,6 +1012,14 @@ button {
 .img-item:hover {
   opacity: 0.8;
 }
+
+.show-image {
+  cursor: pointer;
+}
+.show-image:hover {
+  opacity: 0.9;
+}
+
 .product-content {
   padding: 2rem 1rem;
   background-color: var(--button-color-alt);
@@ -1210,6 +1218,11 @@ button {
   border-spacing: 0;
 }
 
+.table-label {
+  color: var(--text-color);
+  margin-top: 20px;
+}
+
 .rtable,
 .rtable--flip tbody {
   /* optional - enable iOS momentum scrolling */
@@ -1229,53 +1242,6 @@ button {
   background-attachment: scroll, scroll;
   background-repeat: no-repeat;
 }
-
-/* change
-  these
-  gradients
-  from
-  white
-  to
-  your
-  background
-  colour
-  if
-  it
-  differs
-  gradient
-  on
-  the
-  first
-  cells
-  to
-  hide
-  the
-  left */
-/* shadow .rtable td:first-child,
-.rtable--flip tbody tr:first-child {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-repeat: no-repeat;
-  background-size: 20px 100%;
-} */
-
-/* gradient on the last cells to hide the right
- shadow  */
-
-/* .rtable td:last-child,
-.rtable--flip tbody tr:last-child {
-  background-image: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  background-size: 20px 100%;
-} */
 
 .rtable th {
   font-size: 12px;
@@ -1332,11 +1298,9 @@ tr > td {
 
 .rtable--flip td {
   background-image: none !important;
-  /* border-collapse is no longer active */
   border-left: 0;
 }
 
-/* // border-collapse is no longer active */
 .rtable--flip th:not(:last-child),
 .rtable--flip td:not(:last-child) {
   border-bottom: 0;

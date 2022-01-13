@@ -1,0 +1,127 @@
+html,
+body {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.container {
+  max-width: 840px;
+}
+
+code {
+  background: #f2f2f2;
+  color: #333;
+  font-size: 80%;
+}
+
+h3 {
+  word-break: break-all;
+}
+
+h3 code {
+  padding: 6px 10px;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+h3 small code {
+  font-size: 12px;
+  padding: 0;
+  background: none;
+}
+
+.header {
+  background-color: #2b2b2b;
+  background-image:
+    -webkit-linear-gradient(bottom left, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25)),
+    -webkit-linear-gradient(bottom left, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25));
+  background-image:
+    -o-linear-gradient(bottom left, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25)),
+    -o-linear-gradient(bottom left, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25));
+  background-image:
+    linear-gradient(to top right, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25)),
+    linear-gradient(to top right, hsla(0, 0%, 0%, .25) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 0%, .25) 75%, hsla(0, 0%, 0%, .25));
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.image-set {
+  font-size: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.image-set img {
+  display: block;
+}
+
+.image-set a {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 2px;
+  border: 1px solid #ddd;
+  transition: border-color .3s ease;
+  cursor: zoom-in;
+}
+
+.image-set a:hover {
+  border-color: #aaa;
+}
+
+/* prettify style */
+
+pre ul,
+pre ol {
+  padding: 0;
+}
+
+.com {
+  color: #93a1a1;
+}
+
+.lit {
+  color: #195f91;
+}
+
+.pun,
+.opn,
+.clo {
+  color: #93a1a1;
+}
+
+.fun {
+  color: #dc322f;
+}
+
+.str,
+.atv {
+  color: #d14;
+}
+
+.kwd,
+.tag {
+  color: #1e347b;
+}
+
+.typ,
+.atn,
+.dec,
+.var {
+  color: teal;
+}
+
+.pln {
+  color: #48484c;
+}
+
+.prettyprint {
+  padding: 15px;
+  margin: 10px -15px;
+  background-color: #f7f7f9;
+  border: 1px solid #f7f7f9;
+}

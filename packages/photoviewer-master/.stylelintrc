@@ -1,0 +1,19 @@
+{
+  "ignoreFiles": [
+    "dist/**",
+    "docs/**"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+    "alpha-value-notation": null,
+    "color-function-notation": "legacy",
+    "keyframes-name-pattern": null,
+    "no-descending-specificity": null,
+    "number-leading-zero": "never",
+    "string-quotes": "single",
+    "value-no-vendor-prefix": null
+  }
+}
