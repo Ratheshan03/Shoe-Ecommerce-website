@@ -54,7 +54,9 @@ $(document).ready(function () {
                       {
                         {
                           output +=
-                            "<article class='products__card'><img class='products__img' alt='product' src=" +
+                            "<article id='" +
+                            data.shoes[i].id +
+                            "' class='products__card'><img class='products__img' alt='product' src=" +
                             data.shoes[i].picture +
                             ">" +
                             "<h3 class='products__title'>" +
@@ -146,36 +148,6 @@ $(document).ready(function () {
     });
   });
 
-  //Remove item from favourites.......................................................
-  $(function () {
-    $(".remove-btn").on("click", function () {
-      $(this).attr("disabled", true);
-
-      var shoeIdToRemove = $(this).closest("div").attr("id");
-
-      myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
-
-      console.log(shoeIdToRemove);
-      if (myFavouriteShoe != null) {
-        for (var j = 0; j < myFavouriteShoe.length; j++) {
-          if (shoeIdToRemove == myFavouriteShoe[j]) {
-            alert("This Shoe has been removed from your favourites");
-
-            delete myFavouriteShoe[j];
-
-            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-
-            myFavouriteShoe[j] = [];
-          }
-        }
-      }
-
-      if (myFavouriteShoe == null) {
-        alert("You have no favourite items");
-      }
-    });
-  });
-
   //View all items in favourites.......................................................
   $(function () {
     $(".viewFavourites").on("click", function () {
@@ -207,6 +179,41 @@ $(document).ready(function () {
           output += "</div>";
           document.getElementById("favourite_list").innerHTML = output;
         });
+      }
+    });
+  });
+
+  //Remove item from favourites.......................................................
+  $(function () {
+    $("#remove-fav").on("click", function () {
+      console.log("hello");
+      try {
+        $(this).attr("disabled", true);
+        var shoeIdToRemove = $(this).closest("div").attr("id");
+        myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+        console.log(shoeIdToRemove);
+        if (myFavouriteShoe != null) {
+          for (var j = 0; j < myFavouriteShoe.length; j++) {
+            if (shoeIdToRemove == myFavouriteShoe[j]) {
+              alert("This Shoe has been removed from your favourites");
+              localStorage.removeItem();
+              delete myFavouriteShoe[j];
+              localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+              myFavouriteShoe[j] = [];
+            }
+          }
+        }
+
+        if (myFavouriteShoe == null) {
+          alert("You have no favourite items");
+        }
+      } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+          console.log("Error: Local storage limit exceeds");
+        } else {
+          console.log("ERROR: Saving to local storge.");
+        }
       }
     });
   });
