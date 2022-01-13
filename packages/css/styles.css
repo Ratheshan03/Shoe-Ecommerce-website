@@ -1222,7 +1222,8 @@ button {
 
 .tabs {
   background-color: white;
-  padding: 6px !important;
+  padding: 3px !important;
+  justify-content: space-between;
 }
 
 .tabs > li {
@@ -1254,7 +1255,7 @@ button {
   border: none;
   margin: 0px;
   border-radius: 5px;
-  width: 220px;
+  width: 230px;
   text-align: center;
 }
 
@@ -1584,6 +1585,10 @@ tr > td {
     align-items: center;
     align-self: center;
   }
+
+  .tabs > li > a {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1671,6 +1676,10 @@ tr > td {
     display: flex;
     align-items: center;
     align-self: center;
+  }
+
+  .tabs > li > a {
+    width: 260px;
   }
 }
 

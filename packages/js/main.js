@@ -148,13 +148,14 @@ $(document).ready(function () {
 
   //Remove item from favourites.......................................................
   $(function () {
-    $("#remove-fav").on("click", function () {
+    $(".remove-btn").on("click", function () {
       $(this).attr("disabled", true);
 
-      var shoeIdToRemove = $(this).closest("p").attr("id");
+      var shoeIdToRemove = $(this).closest("div").attr("id");
 
       myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
+      console.log(shoeIdToRemove);
       if (myFavouriteShoe != null) {
         for (var j = 0; j < myFavouriteShoe.length; j++) {
           if (shoeIdToRemove == myFavouriteShoe[j]) {
@@ -192,14 +193,14 @@ $(document).ready(function () {
                   data.shoes[i].picture +
                   "' class='cart__img'> </div> <div class='cart__details'> <h3 class='cart__title'>" +
                   data.shoes[i].name +
-                  "</h3><span class='cart__price'> " +
+                  "</h3><span class='cart__price'> $" +
                   data.shoes[i].price +
-                  "</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
+                  ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
                   data.shoes[i].url +
                   "'>More Details</a></button>" +
-                  "<p id='" +
+                  "<div id='" +
                   data.shoes[i].id +
-                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></p></div></div></article>";
+                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></article>";
               }
             }
           }
