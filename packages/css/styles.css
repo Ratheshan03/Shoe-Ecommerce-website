@@ -993,6 +993,7 @@ button {
 .img-showcase img {
   width: 100%;
   height: 100%;
+  border-radius: 3px;
 }
 
 .img-select {
@@ -1001,6 +1002,7 @@ button {
 .img-item {
   margin: 0.3rem;
   width: 100px;
+  border-radius: 3px;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),
@@ -1008,6 +1010,7 @@ button {
 .img-item:nth-child(4),
 .img-item:nth-child(5) {
   margin-right: 0;
+  border-radius: 3px;
 }
 .img-item:hover {
   opacity: 0.8;
@@ -1015,6 +1018,7 @@ button {
 
 .show-image {
   cursor: pointer;
+  box-shadow: 0 10px 13px hsla(0, 0%, 11%, 0.3);
 }
 .show-image:hover {
   opacity: 0.9;
@@ -1055,10 +1059,26 @@ button {
 }
 
 .size-num {
-  padding: 3px;
-  border: 2.5px solid var(--first-color);
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
+
+.size-num > span {
+  width: 50px;
+  padding: 6px;
+  text-align: center;
+  border: 2px solid var(--first-color);
+  border-radius: 3px;
+  margin-right: 10px !important;
+}
+
+.size-num > span:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  color: white;
+  border: 2px solid white;
+}
+
 .product-link:hover {
   opacity: 0.9;
 }
@@ -1359,7 +1379,7 @@ tr > td {
   }
   .img-display {
     overflow: hidden;
-    width: 45vw;
+    width: 65vw;
     height: 70vh;
     display: flex;
     align-items: center;
@@ -1472,7 +1492,7 @@ tr > td {
   }
   .img-display {
     overflow: hidden;
-    width: 45vw;
+    width: 50vw;
     height: 70vh;
     display: flex;
     align-items: center;

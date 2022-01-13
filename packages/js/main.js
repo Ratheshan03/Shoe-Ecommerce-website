@@ -87,6 +87,26 @@ $(document).ready(function () {
     //* Photoviewer Plugin *//
     var options = {
       // options here
+      // Enable modal to drag
+      draggable: true,
+
+      // Enable modal to resize
+      resizable: true,
+
+      // Enable image to move
+      movable: true,
+
+      // Enable keyboard navigation
+      keyboard: true,
+
+      // Shows the title
+      title: true,
+
+      // Min width of modal
+      modalWidth: 920,
+
+      // Min height of modal
+      modalHeight: 520,
     };
 
     var viewer = new PhotoViewer(photos, options);
