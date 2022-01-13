@@ -118,7 +118,7 @@ $(document).ready(function () {
     $("#fav-btn").on("click", function () {
       try {
         $(this).attr("disabled", true);
-        var shoeIdToAdd = $(this).closest("p").attr("id");
+        var shoeIdToAdd = $(this).closest("div").attr("id");
         var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
         if (myFavouriteShoe == null) {
