@@ -179,52 +179,42 @@ $(document).ready(function () {
   $(function () {
     $(".viewFavourites").on("click", function () {
       console.log("Restoring array data from local storage");
-
       myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
-      var output = "<article class='cart__card'>";
-
+      var output = "<div class='fav-div'>";
       if (myFavouriteShoe != null) {
-        for (var i = 0; i < data.shoes.length; i++) {
-          for (j = 0; j < myFavouriteShoe.length; j++) {
-            if (data.shoes[i].id == myFavouriteShoe[j]) {
-              output +=
-                "<div class='cart__box'>" +
-                "<img src = " +
-                data.shoes[i].picture +
-                " class='cart__img' > </div>" +
-                "<div class='cart__details'> <h3 class='cart__title'>" +
-                data.shoes[i].name +
-                "</h3>" +
-                "<span class='cart__price'> " +
-                data.shoes[i].price +
-                "</span>" +
-                "<div class='cart__amount'>" +
-                "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
-                data.shoes[i].url +
-                "'>More Details</a></button>" +
-                "<p id='" +
-                data.shoes[i].id +
-                "'> <button id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></p>" +
-                "</div>" +
-                "</div>";
+        $.getJSON("../shoes.json", function (data) {
+          for (var i = 0; i < data.shoes.length; i++) {
+            for (j = 0; j < myFavouriteShoe.length; j++) {
+              if (data.shoes[i].id == myFavouriteShoe[j]) {
+                output +=
+                  "<article class='fav-item cart__card'> <div class='fav-box cart__box'><img src='" +
+                  data.shoes[i].picture +
+                  "' class='cart__img'> </div> <div class='cart__details'> <h3 class='cart__title'>" +
+                  data.shoes[i].name +
+                  "</h3><span class='cart__price'> " +
+                  data.shoes[i].price +
+                  "</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
+                  data.shoes[i].url +
+                  "'>More Details</a></button>" +
+                  "<p id='" +
+                  data.shoes[i].id +
+                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></p></div></div></article>";
+              }
             }
           }
-        }
+          output += "</div>";
+          document.getElementById("favourite_list").innerHTML = output;
+        });
       }
-      output += "</article>";
-
-      document.getElementById("fav_list").innerHTML = output;
     });
   });
 
   //Clear all items in favourites.......................................................
   $(function () {
     $(".clearFavourites").on("click", function () {
-      $("#custom2").remove();
-
-      myFavouriteShoe = JSON.parse(localStorage.getItem("favshoe"));
-
+      $("#favourite_list").remove();
+      myFavouriteShoe = JSON.parse(localStorage.getItem("favshoes"));
       localStorage.clear();
     });
   });

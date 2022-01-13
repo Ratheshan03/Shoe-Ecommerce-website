@@ -66,11 +66,11 @@
         </div>
 
         <div class="nav__btns">
-          <div class="nav__shop">
+          <div class="nav__shop" id="cart-shop">
             <i class="bx bx-heart"></i>
           </div>
 
-          <div class="nav__shop" id="cart-shop">
+          <div class="nav__shop">
             <i class="bx bx-shopping-bag"></i>
           </div>
 
@@ -81,13 +81,14 @@
       </nav>
     </header>
 
-    <!--==================== FAV CART ====================-->
+    <!--====================FAV CART ====================-->
     <div class="cart" id="cart">
       <i class="bx bx-x cart__close" id="cart-close"></i>
 
-      <h2 class="cart__title-center">My Favourites</h2>
+      <h2 class="cart__title-center">FAVOURITES</h2>
 
-      <div class="cart__container"></div>
+      <div class="cart__container" id="favourite_list"></div>
+      <button class="clearFavourites">Clear Favourites</button>
     </div>
     <!--==================== MAIN ====================-->
     <main class="main">
@@ -203,10 +204,12 @@
 
               <div class="purchase-info">
                 <input type="number" min="0" value="1" />
-                <button type="button" class="btn">
-                  Add to Favourites <i class="fas fa-shopping-cart"></i>
-                </button>
-                <button type="button" class="btn">Add to Cart</button>
+                <p id="shoe2">
+                  <button type="button" class="btn" id="fav-btn">
+                    Add to Favourites <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" class="btn">Add to Cart</button>
+                </p>
               </div>
             </div>
           </div>

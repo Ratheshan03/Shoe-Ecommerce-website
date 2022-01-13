@@ -869,13 +869,47 @@ button {
 }
 
 .cart__box {
+  height: 100px;
+  width: 100px;
   background-color: var(--container-color);
-  padding: 0.75rem 1.25rem;
+  padding: 0.3rem 0.3rem;
   border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.fav-item {
+  margin-bottom: 25px;
+}
+
+.remove-btn {
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.remove-btn > .bx-trash-alt {
+  color: black;
+}
+
+.clearFavourites {
+  background-color: var(--button-color);
+  width: 250px;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
+.clearFavourites:hover {
+  background-color: rgb(196, 195, 195);
+  color: black;
+}
+
+.clearFavourites .fav-more-btn {
+  margin-bottom: 20px;
+  padding: 0.2rem;
 }
 
 .cart__img {
-  width: 50px;
+  width: 100px;
 }
 
 .cart__title {
