@@ -33,6 +33,21 @@ $(document).ready(function () {
     $("#tabs").tabs();
   });
 
+  $("#wmyTab a").click(function (e) {
+    e.preventDefault();
+    this.tab("show");
+  });
+
+  $("#ladies").click(function () {
+    document.getElementById("man").style.display = "none";
+    document.getElementById("woman").style.display = "block";
+  });
+
+  $("#dudes").click(function () {
+    document.getElementById("man").style.display = "block";
+    document.getElementById("woman").style.display = "none";
+  });
+
   //* Retrieving Results *//
   $("#submit-btn").on("click", function (e) {
     var style = $("#style").val();
