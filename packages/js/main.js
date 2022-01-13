@@ -111,6 +111,123 @@ $(document).ready(function () {
 
     var viewer = new PhotoViewer(photos, options);
   });
+
+  //* ---------- Add to Favorites ------------*//
+
+  $(function () {
+    $("#fav-btn").on("click", function () {
+      try {
+        $(this).attr("disabled", true);
+        var shoeIdToAdd = $(this).closest("p").attr("id");
+        var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+        if (myFavouriteShoe == null) {
+          myFavouriteShoe = [];
+        }
+
+        if (myFavouriteShoe != null) {
+          for (var j = 0; j < myFavouriteShoe.length; j++) {
+            if (shoeIdToAdd == myFavouriteShoe[j]) {
+              alert("This shoe is already added to your favourites");
+              myFavouriteShoe = [];
+            }
+          }
+        }
+
+        myFavouriteShoe.push(shoeIdToAdd);
+        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+      } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+          console.log("Error: Local storage limit exceeds");
+        } else {
+          console.log("ERROR: Saving to local storge.");
+        }
+      }
+    });
+  });
+
+  //Remove item from favourites.......................................................
+  $(function () {
+    $("#remove-fav").on("click", function () {
+      $(this).attr("disabled", true);
+
+      var shoeIdToRemove = $(this).closest("p").attr("id");
+
+      myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+      if (myFavouriteShoe != null) {
+        for (var j = 0; j < myFavouriteShoe.length; j++) {
+          if (shoeIdToRemove == myFavouriteShoe[j]) {
+            alert("This Shoe has been removed from your favourites");
+
+            delete myFavouriteShoe[j];
+
+            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+
+            myFavouriteShoe[j] = [];
+          }
+        }
+      }
+
+      if (myFavouriteShoe == null) {
+        alert("You have no favourite items");
+      }
+    });
+  });
+
+  //View all items in favourites.......................................................
+  $(function () {
+    $(".viewFavourites").on("click", function () {
+      console.log("Restoring array data from local storage");
+
+      myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+      var output = "<article class='cart__card'>";
+
+      if (myFavouriteShoe != null) {
+        for (var i = 0; i < data.shoes.length; i++) {
+          for (j = 0; j < myFavouriteShoe.length; j++) {
+            if (data.shoes[i].id == myFavouriteShoe[j]) {
+              output +=
+                "<div class='cart__box'>" +
+                "<img src = " +
+                data.shoes[i].picture +
+                " class='cart__img' > </div>" +
+                "<div class='cart__details'> <h3 class='cart__title'>" +
+                data.shoes[i].name +
+                "</h3>" +
+                "<span class='cart__price'> " +
+                data.shoes[i].price +
+                "</span>" +
+                "<div class='cart__amount'>" +
+                "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
+                data.shoes[i].url +
+                "'>More Details</a></button>" +
+                "<p id='" +
+                data.shoes[i].id +
+                "'> <button id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></p>" +
+                "</div>" +
+                "</div>";
+            }
+          }
+        }
+      }
+      output += "</article>";
+
+      document.getElementById("fav_list").innerHTML = output;
+    });
+  });
+
+  //Clear all items in favourites.......................................................
+  $(function () {
+    $(".clearFavourites").on("click", function () {
+      $("#custom2").remove();
+
+      myFavouriteShoe = JSON.parse(localStorage.getItem("favshoe"));
+
+      localStorage.clear();
+    });
+  });
 });
 
 //* -------------------- Shoe Page ------------------- *//
