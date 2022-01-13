@@ -1062,6 +1062,7 @@ button {
   padding: 2rem 1rem;
   background-color: var(--button-color-alt);
 }
+
 .product-title {
   font-size: 3rem;
   text-transform: capitalize;
@@ -1211,7 +1212,8 @@ button {
 }
 
 .more {
-  width: 85vw;
+  max-width: 75vw;
+  margin: auto;
 }
 
 #tabs {
@@ -1398,6 +1400,12 @@ tr > td {
     grid-column-gap: 20px;
   }
 
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .select-item {
     margin: 15px;
   }
@@ -1426,6 +1434,12 @@ tr > td {
 
   .select-item {
     margin: 15px;
+  }
+
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .img-display {
@@ -1531,6 +1545,12 @@ tr > td {
     height: 155px;
   }
 
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .newsletter__bg {
     text-align: initial;
     column-gap: 2rem;
@@ -1550,6 +1570,12 @@ tr > td {
   .footer__title {
     font-size: var(--h3-font-size);
   }
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .img-display {
     overflow: hidden;
     width: 50vw;
@@ -1622,8 +1648,8 @@ tr > td {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
   }
+
   .card-wrapper {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1676,14 +1702,63 @@ tr > td {
   .scrollup {
     right: 3rem;
   }
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   .img-display {
     overflow: hidden;
-    width: 25vw;
-    height: 70vh;
+    width: 28vw;
+    height: 60vh;
     display: flex;
     align-items: center;
     align-self: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story__container,
+  .testimonial__container {
+    column-gap: 13rem;
+  }
+
+  .story__container {
+    padding-top: 3rem;
+  }
+  .story__img {
+    left: 5rem;
+    top: -5rem;
+  }
+
+  .testimonial__img {
+    right: 5rem;
+    top: 5rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+
+  .img-display {
+    overflow: hidden;
+    width: 21vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    align-self: center;
+  }
+
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
