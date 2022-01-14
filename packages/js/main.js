@@ -23,9 +23,9 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-      $("#slider-range").slider("values", 0) +
-      " - $" +
-      $("#slider-range").slider("values", 1)
+        $("#slider-range").slider("values", 0) +
+        " - $" +
+        $("#slider-range").slider("values", 1)
     );
   });
 
@@ -162,17 +162,17 @@ $(document).ready(function () {
         .find("ul")
         .append(
           '<li data-id="' +
-          move.attr("data-id") +
-          '">' +
-          '<span class="name">' +
-          move.find("h3").html() +
-          "</span>" +
-          '<input class="count" value="1" type="text">' +
-          '<button class="delete" onclick="delete_list_item(' +
-          "'" +
-          move.attr("data-id") +
-          "'" +
-          ')">&#10005;</button>'
+            move.attr("data-id") +
+            '">' +
+            '<span class="name">' +
+            move.find("h3").html() +
+            "</span>" +
+            '<input class="count" value="1" type="text">' +
+            '<button class="delete" onclick="delete_list_item(' +
+            "'" +
+            move.attr("data-id") +
+            "'" +
+            ')">&#10005;</button>'
         );
       $("li").draggable({
         revert: true,
@@ -329,11 +329,13 @@ imgBtns.forEach((imgItem) => {
 });
 
 function slideImage() {
-  const displayWidth = document.querySelector(".img-showcase img:first-child")
-    .clientWidth;
+  const displayWidth = document.querySelector(
+    ".img-showcase img:first-child"
+  ).clientWidth;
 
-  document.querySelector(".img-showcase").style.transform = `translateX(${-(imgId - 1) * displayWidth
-    }px)`;
+  document.querySelector(".img-showcase").style.transform = `translateX(${
+    -(imgId - 1) * displayWidth
+  }px)`;
 }
 
 window.addEventListener("resize", slideImage);
@@ -518,14 +520,15 @@ function delete_list_item(shoe_id) {
 }
 
 function swal_message_gen(icon, title, footer, background) {
-  Swal.fire({
-    position: "center",
-    icon: icon,
-    title: title,
-    footer: footer,
-    showConfirmButton: false,
-    showCancelButton: false,
-    background: background,
-    timer: 5000,
-  });
+  alert(title);
+  // Swal.fire({
+  //   position: "center",
+  //   icon: icon,
+  //   title: title,
+  //   footer: footer,
+  //   showConfirmButton: false,
+  //   showCancelButton: false,
+  //   background: background,
+  //   timer: 5000,
+  // });
 }
