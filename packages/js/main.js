@@ -174,33 +174,7 @@ $(document).ready(function () {
 
   $(function () {
     $("#fav-btn").on("click", function () {
-      try {
-        // $(this).attr("disabled", true);
-        var shoeIdToAdd = $(this).closest("div").attr("id");
-        var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
-
-        if (myFavouriteShoe == null) {
-          myFavouriteShoe = [];
-        }
-
-        if (myFavouriteShoe != null) {
-          for (var j = 0; j < myFavouriteShoe.length; j++) {
-            if (shoeIdToAdd == myFavouriteShoe[j]) {
-              alert("This shoe is already added to your favourites");
-              myFavouriteShoe = [];
-            }
-          }
-        }
-
-        myFavouriteShoe.push(shoeIdToAdd);
-        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-      } catch (e) {
-        if (e == QUOTA_EXCEEDED_ERR) {
-          console.log("Error: Local storage limit exceeds");
-        } else {
-          console.log("ERROR: Saving to local storge.");
-        }
-      }
+      add_fav();
     });
   });
 
@@ -405,6 +379,37 @@ if (cartClose) {
   });
 }
 
+/*add fav*/
+function add_fav() {
+  try {
+    // $(this).attr("disabled", true);
+    var shoeIdToAdd = $("#fav-btn").closest("div").attr("id");
+    var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+    if (myFavouriteShoe == null) {
+      myFavouriteShoe = [];
+    }
+
+    if (myFavouriteShoe != null) {
+      for (var j = 0; j < myFavouriteShoe.length; j++) {
+        if (shoeIdToAdd == myFavouriteShoe[j]) {
+          alert("This shoe is already added to your favourites");
+          myFavouriteShoe = [];
+        }
+      }
+    }
+
+    myFavouriteShoe.push(shoeIdToAdd);
+    localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+  } catch (e) {
+    if (e == QUOTA_EXCEEDED_ERR) {
+      console.log("Error: Local storage limit exceeds");
+    } else {
+      console.log("ERROR: Saving to local storge.");
+    }
+  }
+}
+
 /*remove fav*/
 function remove_fav(shoeIdToRemove) {
   myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
@@ -427,4 +432,5 @@ function remove_fav(shoeIdToRemove) {
 // The function that is triggered once delete button is pressed
 function delete_list_item(shoe_id) {
   $(`.basket_list li[data-id="${shoe_id}"]`).closest("li").remove();
+  remove_fav(shoe_id);
 }
