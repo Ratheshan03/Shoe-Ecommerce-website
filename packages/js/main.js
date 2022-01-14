@@ -274,7 +274,7 @@ $(document).ready(function () {
 
             myFavouriteShoe.pop(shoeIdToRemove);
             localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-            $("#favourite_list .fav-div li#" + shoeIdToRemove ).remove();
+            $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
           }
         }
       }
@@ -424,15 +424,15 @@ if (cartClose) {
 function remove_fav(shoeIdToRemove) {
   myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
   if (myFavouriteShoe != null) {
-    for (var j = 0; j < myFavouriteShoe.length; j++) {
-      if (shoeIdToRemove == myFavouriteShoe[j]) {
+    myFavouriteShoe.forEach(shoe => {
+      if (shoeIdToRemove == shoe) {
         alert("This Shoe has been removed from your favourites");
 
         myFavouriteShoe.pop(shoeIdToRemove);
         localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-        $("#favourite_list .fav-div li#" + shoeIdToRemove ).remove();
+        $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
       }
-    }
+    });
   }
 
   if (myFavouriteShoe == null) {
