@@ -1732,6 +1732,10 @@ tr > td {
     margin-right: auto;
   }
 
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .story__container,
   .testimonial__container {
     column-gap: 13rem;
@@ -2031,7 +2035,7 @@ tr > td {
 
 .basket.active .basket_list,
 .basket.hover .basket_list {
-  border-color: #ffa0a3;
+  border-color: #ffd8d9;
 }
 
 .basket.active .basket_list {
@@ -2039,7 +2043,7 @@ tr > td {
 }
 
 .basket.hover .basket_list {
-  background-color: #ffa0a3;
+  background-color: #4b4b4b73;
 }
 
 /* .head */
@@ -2055,6 +2059,7 @@ tr > td {
 
 .basket .head .name {
   float: left;
+  color: white;
 }
 
 .basket .head .count {
@@ -2151,4 +2156,110 @@ tr > td {
 .basket ul li button.delete:active {
   color: #fff;
   background-color: #ee5757;
+}
+
+/** ----Contact Page------**/
+
+/*=============== CONTACT ===============*/
+.contact__container {
+  row-gap: 4.5rem;
+}
+
+.contact__data {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contact__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+  line-height: 140%;
+}
+
+.contact__subtitle {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  margin-bottom: var(--mb-0-5);
+}
+
+.contact__description {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.contact__icon {
+  font-size: 1.25rem;
+}
+
+.contact__inputs {
+  display: grid;
+  row-gap: 2rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.contact__content {
+  position: relative;
+  height: 3rem;
+  border-bottom: 1px solid var(--text-color-light);
+}
+
+.contact__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: none;
+
+  color: var(--text-color);
+
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.contact__label {
+  position: absolute;
+  top: 0.75rem;
+  width: 100%;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  transition: 0.3s;
+}
+
+.contact__area {
+  height: 7rem;
+}
+
+.contact__area textarea {
+  resize: none;
+}
+
+/*Input focus move up label*/
+.contact__input:focus + .contact__label {
+  top: -0.75rem;
+  left: 0;
+  font-size: var(--smaller-font-size);
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.contact__input:not(:placeholder-shown).contact__input:not(:focus)
+  + .contact__label {
+  top: -0.75rem;
+  font-size: var(--smaller-font-size);
+  z-index: 10;
+}
+
+.button__icon {
+  transition: 0.5s ease-in-out;
+}
+
+.contact__btn:hover .button__icon {
+  transform: translateX(6px);
 }

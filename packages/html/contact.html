@@ -68,6 +68,74 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+      <!--==================== CONTACT ====================-->
+      <section class="contact section container" id="contact">
+        <div class="contact__container grid">
+          <div class="contact__box">
+            <h2 class="contact__title">
+              Reach out to us today <br />
+              via any of the given <br />
+              information
+            </h2>
+
+            <div class="contact__data">
+              <div class="contact__information">
+                <h3 class="contact__subtitle">Call us for instant support</h3>
+                <span class="contact__description">
+                  <i class="ri-phone-line contact__icon"></i>
+                  +071 9993444
+                </span>
+                <br />
+                <span class="contact__description">
+                  <i class="ri-whatsapp-line contact__icon"></i>
+                  +077 9993444
+                </span>
+              </div>
+
+              <div class="contact__information">
+                <h3 class="contact__subtitle">Write us by mail</h3>
+                <span class="contact__description">
+                  <i class="ri-mail-line contact__icon"></i>
+                  carnage@gmail.com
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <form
+            action="mailto:lionratheshan@gmail.com"
+            method="post"
+            enctype="text/plain"
+            class="contact__form"
+          >
+            <div class="contact__inputs">
+              <div class="contact__content">
+                <input type="email" placeholder=" " class="contact__input" />
+                <label for="" class="contact__label">Email</label>
+              </div>
+
+              <div class="contact__content">
+                <input type="text" placeholder=" " class="contact__input" />
+                <label for="" class="contact__label">Subject</label>
+              </div>
+
+              <div class="contact__content contact__area">
+                <textarea
+                  name="message"
+                  placeholder=" "
+                  class="contact__input"
+                ></textarea>
+                <label for="" class="contact__label">Message</label>
+              </div>
+            </div>
+
+            <button type="submit" class="button button--flex contact__btn">
+              Send Message
+              <i class="ri-arrow-right-up-line button__icon"></i>
+            </button>
+          </form>
+        </div>
+      </section>
       <!--==================== NEWSLETTER ====================-->
       <section class="newsletter section container">
         <div class="newsletter__bg grid">
@@ -183,6 +251,9 @@
     <a href="#" class="scrollup" id="scroll-up">
       <i class="bx bx-up-arrow-alt scrollup__icon"></i>
     </a>
+
+    <!--=============== SWEET ALERT ===============-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--=============== SWIPER JS ===============-->
     <script src="../js/swiper-bundle.min.js"></script>
