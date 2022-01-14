@@ -216,6 +216,7 @@ $(document).ready(function () {
         if (myFavouriteShoe != null) {
           for (var j = 0; j < myFavouriteShoe.length; j++) {
             if (shoeIdToAdd == myFavouriteShoe[j]) {
+              myFavouriteShoe = [];
               Swal.fire({
                 icon: "error",
                 title: "Shoe already been added!",
@@ -226,23 +227,21 @@ $(document).ready(function () {
                 color: "fff",
                 timer: 5000,
               });
-              myFavouriteShoe = [];
             }
           }
+          myFavouriteShoe.push(shoeIdToAdd);
+          localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Shoe Added to the Favorite list",
+            footer: "<p>To check the favorite list head over to Shop page.</p>",
+            showConfirmButton: false,
+            showCancelButton: false,
+            background: "#edfffc",
+            timer: 5000,
+          });
         }
-
-        myFavouriteShoe.push(shoeIdToAdd);
-        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Shoe Added to the Favorite list",
-          footer: "<p>To check the favorite list head over to Shop page.</p>",
-          showConfirmButton: false,
-          showCancelButton: false,
-          background: "#edfffc",
-          timer: 5000,
-        });
       } catch (e) {
         if (e == QUOTA_EXCEEDED_ERR) {
           console.log("Error: Local storage limit exceeds");
@@ -304,6 +303,9 @@ $(document).ready(function () {
       if (myFavouriteShoe != null) {
         for (var j = 0; j < myFavouriteShoe.length; j++) {
           if (shoeIdToRemove == myFavouriteShoe[j]) {
+            myFavouriteShoe.pop(shoeIdToRemove);
+            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+            $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
             Swal.fire({
               position: "center",
               icon: "success",
@@ -315,10 +317,6 @@ $(document).ready(function () {
               background: "#edfffc",
               timer: 5000,
             });
-
-            myFavouriteShoe.pop(shoeIdToRemove);
-            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-            $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
           }
         }
       }
