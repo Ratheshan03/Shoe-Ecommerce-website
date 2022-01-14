@@ -153,16 +153,6 @@ $(document).ready(function () {
           itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
         itemId.remove();
         delete_list_item(move.attr("data-id"));
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Shoe removed from the Favorite list!",
-          footer: "<p>To check the favorite list head over to Shop page.</p>",
-          showConfirmButton: false,
-          showCancelButton: false,
-          background: "#edfffc",
-          timer: 5000,
-        });
       },
     });
 
@@ -195,49 +185,40 @@ $(document).ready(function () {
   $(function () {
     $("#fav-btn").on("click", function () {
       try {
-        // $(this).attr("disabled", true);
         var shoeIdToAdd = $(this).closest("div").attr("id");
         var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
         if (myFavouriteShoe == null) {
           myFavouriteShoe = [];
-        }
-
-        if (myFavouriteShoe != null) {
-          for (var j = 0; j < myFavouriteShoe.length; j++) {
-            if (shoeIdToAdd == myFavouriteShoe[j]) {
-              myFavouriteShoe = [];
-              Swal.fire({
-                icon: "error",
-                title: "Shoe already been added!",
-                text: "Try it with another shoe",
-                footer: "<p>Please check the Fav list</p>",
-                background: "#edfffc",
-                showCancelButton: false,
-                color: "fff",
-                timer: 5000,
-              });
-            }
-          }
           myFavouriteShoe.push(shoeIdToAdd);
           localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Shoe Added to the Favorite list",
-            footer: "<p>To check the favorite list head over to Shop page.</p>",
-            showConfirmButton: false,
-            showCancelButton: false,
-            background: "#edfffc",
-            timer: 5000,
-          });
+          swal_message_gen(
+            "success",
+            "Shoe Added to the Favorite list",
+            "<p>To check the favorite list head over to Shop page.</p>",
+            "#edfffc"
+          );
+        } else {
+          if (myFavouriteShoe.includes(shoeIdToAdd)) {
+            swal_message_gen(
+              "error",
+              "The shoe already been added to the Fav list!",
+              "<p>Please view and check the Fav list</p>",
+              "#edfffc"
+            );
+          } else {
+            myFavouriteShoe.push(shoeIdToAdd);
+            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+            swal_message_gen(
+              "success",
+              "Shoe Added to the Favorite list",
+              "<p>To check the favorite list head over to Shop page.</p>",
+              "#edfffc"
+            );
+          }
         }
       } catch (e) {
-        if (e == QUOTA_EXCEEDED_ERR) {
-          console.log("Error: Local storage limit exceeds");
-        } else {
-          console.log("ERROR: Saving to local storge.");
-        }
+        console.log(e);
       }
     });
   });
@@ -296,32 +277,22 @@ $(document).ready(function () {
             myFavouriteShoe.pop(shoeIdToRemove);
             localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
             $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Shoe removed from the Favorite list!",
-              footer:
-                "<p>To check the favorite list head over to Shop page.</p>",
-              showConfirmButton: false,
-              showCancelButton: false,
-              background: "#edfffc",
-              timer: 5000,
-            });
+            swal_message_gen(
+              "success",
+              "Shoe removed from the Favorite list!",
+              "<p>To check the favorite list head over to Shop page.</p>",
+              "#edfffc"
+            );
           }
         }
       }
-
       if (myFavouriteShoe == null) {
-        Swal.fire({
-          icon: "error",
-          title: "There are no shoes in the Fav list!",
-          text: "Try to add a new shoe",
-          footer: "<p>Please view and check the Fav list</p>",
-          background: "#edfffc",
-          showCancelButton: false,
-          color: "fff",
-          timer: 5000,
-        });
+        swal_message_gen(
+          "error",
+          "There are no shoes in the Fav list!",
+          "<p>Please view and check the Fav list</p>",
+          "#edfffc"
+        );
       }
     });
   });
@@ -333,16 +304,12 @@ $(document).ready(function () {
       $(".basket_list li").remove();
       myFavouriteShoe = JSON.parse(localStorage.getItem("favshoes"));
       localStorage.clear();
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "All shoes have been removed from the Favorite list!",
-        footer: "<p>Add new shoes to your fav list.</p>",
-        showConfirmButton: false,
-        showCancelButton: false,
-        background: "#edfffc",
-        timer: 5000,
-      });
+      swal_message_gen(
+        "success",
+        "All shoes have been removed from the Favorite list!",
+        "<p>Add new shoes to your fav list.</p>",
+        "#edfffc"
+      );
     });
   });
 });
@@ -362,9 +329,8 @@ imgBtns.forEach((imgItem) => {
 });
 
 function slideImage() {
-  const displayWidth = document.querySelector(
-    ".img-showcase img:first-child"
-  ).clientWidth;
+  const displayWidth = document.querySelector(".img-showcase img:first-child")
+    .clientWidth;
 
   document.querySelector(".img-showcase").style.transform = `translateX(${-(imgId - 1) * displayWidth
     }px)`;
@@ -481,41 +447,29 @@ function add_fav_list(shoeIdToAdd) {
       myFavouriteShoe = [];
       myFavouriteShoe.push(shoeIdToAdd);
       localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Shoe Added to the Favorite list",
-        footer: "<p>To check the favorite list head over to Shop page.</p>",
-        showConfirmButton: false,
-        showCancelButton: false,
-        background: "#edfffc",
-        timer: 5000,
-      });
+      swal_message_gen(
+        "success",
+        "Shoe Added to the Favorite list",
+        "<p>To check the favorite list head over to Shop page.</p>",
+        "#edfffc"
+      );
     } else {
       if (myFavouriteShoe.includes(shoeIdToAdd)) {
-        Swal.fire({
-          icon: "error",
-          title: "The shoe already been added to the Fav list!",
-          text: "Try to add a new shoe",
-          footer: "<p>Please view and check the Fav list</p>",
-          background: "#edfffc",
-          showCancelButton: false,
-          color: "fff",
-          timer: 5000,
-        });
+        swal_message_gen(
+          "error",
+          "The shoe already been added to the Fav list!",
+          "<p>Please view and check the Fav list</p>",
+          "#edfffc"
+        );
       } else {
         myFavouriteShoe.push(shoeIdToAdd);
         localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Shoe Added to the Favorite list!",
-          footer: "<p>To check the favorite list head over to Shop page.</p>",
-          showConfirmButton: false,
-          showCancelButton: false,
-          background: "#edfffc",
-          timer: 5000,
-        });
+        swal_message_gen(
+          "success",
+          "Shoe Added to the Favorite list",
+          "<p>To check the favorite list head over to Shop page.</p>",
+          "#edfffc"
+        );
       }
     }
   } catch (e) {
@@ -527,32 +481,24 @@ function add_fav_list(shoeIdToAdd) {
 function remove_fav(shoeIdToRemove) {
   myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
   if (myFavouriteShoe == null) {
-    Swal.fire({
-      icon: "error",
-      title: "Favorite list is empty! ",
-      text: "Try to add a new shoe",
-      footer: "<p>Please view and check the Fav list</p>",
-      background: "#edfffc",
-      showCancelButton: false,
-      color: "fff",
-      timer: 5000,
-    });
+    swal_message_gen(
+      "error",
+      "Favorite list is empty! ",
+      "<p>Please view and check the Fav list</p>",
+      "#edfffc"
+    );
   } else {
     myFavouriteShoe.forEach((shoe) => {
       if (shoeIdToRemove == shoe) {
         myFavouriteShoe.pop(shoeIdToRemove);
         localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
         $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Shoe has been removed from the Favorite list!",
-          footer: "<p>Add new shoes to your fav list.</p>",
-          showConfirmButton: false,
-          showCancelButton: false,
-          background: "#edfffc",
-          timer: 5000,
-        });
+        swal_message_gen(
+          "success",
+          "Shoe removed from the Favorite list!",
+          "<p>To check the favorite list head over to Shop page.</p>",
+          "#edfffc"
+        );
       }
     });
   }
@@ -563,14 +509,23 @@ function remove_fav(shoeIdToRemove) {
 function delete_list_item(shoe_id) {
   $(`.basket_list li[data-id="${shoe_id}"]`).closest("li").remove();
   remove_fav(shoe_id);
+  swal_message_gen(
+    "success",
+    "Shoe removed from the Favorite list!",
+    "<p>To check the favorite list head over to Shop page.</p>",
+    "#edfffc"
+  );
+}
+
+function swal_message_gen(icon, title, footer, background) {
   Swal.fire({
     position: "center",
-    icon: "success",
-    title: "Shoe has been removed from the Favorite list!",
-    footer: "<p>Add new shoes to your fav list.</p>",
+    icon: icon,
+    title: title,
+    footer: footer,
     showConfirmButton: false,
     showCancelButton: false,
-    background: "#edfffc",
+    background: background,
     timer: 5000,
   });
 }
