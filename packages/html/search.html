@@ -12,7 +12,11 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link
+      href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+
     <!--=============== BOXICONS ===============-->
     <link
       rel="stylesheet"
@@ -21,10 +25,7 @@
 
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
-    <link
-      href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-      rel="stylesheet"
-    />
+
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../css/styles.css" />
 
@@ -71,38 +72,6 @@
         </div>
       </nav>
     </header>
-
-    <!--====================FAV CART ====================-->
-    <div class="cart" id="cart">
-      <i class="bx bx-x cart__close" id="cart-close"></i>
-
-      <h2 class="cart__title-center">FAVOURITES</h2>
-      <div class="basket">
-        <div class="basket_list">
-          <div class="head">
-            <span class="name">Product name</span>
-            <span class="count">Quantity</span>
-          </div>
-          <ul class="ul"></ul>
-          <div class="cart__container" id="favourite_list"></div>
-          <button class="clearFavourites">Clear Favourites</button>
-          <div class="helpBk">
-            <div class="questionBk">!</div>
-            <div class="popupBk">
-              <p>
-                <strong>Drag</strong> and <strong>Drop</strong> your
-                <b>favourite</b> shoes in here.
-              </p>
-              <p>
-                You can also <strong>view your favourites list</strong> by
-                clicking <strong>on view favourites button</strong>.
-              </p>
-              <br /><br />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--==================== MAIN ====================-->
     <main class="main">
@@ -230,6 +199,24 @@
           </form>
         </div>
       </section>
+
+      <!--====================FAV CART ====================-->
+      <div class="cart" id="cart">
+        <i class="bx bx-x cart__close" id="cart-close"></i>
+
+        <h2 class="cart__title-center">FAVOURITES</h2>
+        <div class="basket">
+          <div class="basket_list">
+            <div class="head">
+              <span class="name">Product name</span>
+              <span class="count">Quantity</span>
+            </div>
+            <ul class="ul"></ul>
+            <div class="cart__container" id="favourite_list"></div>
+            <button class="clearFavourites">Clear Favourites</button>
+          </div>
+        </div>
+      </div>
 
       <!--=================== Results =====================-->
 
@@ -426,8 +413,6 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <!--================== jquery ======================-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
