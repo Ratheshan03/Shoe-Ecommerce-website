@@ -75,14 +75,10 @@ $(document).ready(function () {
         document.getElementById("products_list").innerHTML = output;
 
         $("li").draggable({
-          revert: true,
-          drag: function () {
-            console.log("dragging");
-          },
-          stop: function () {
-            console.log("stopping");
-          },
+          revert: true
         });
+
+
       });
     });
   });
@@ -131,14 +127,10 @@ $(document).ready(function () {
     // jQuery Ui Droppable
     $(".basket").droppable({
 
-      // The class that will be appended to the to-be-dropped-element (basket)
       activeClass: "active",
 
-      // The class that will be appended once we are hovering the to-be-dropped-element (basket)
       hoverClass: "hover",
 
-      // The acceptance of the item once it touches the to-be-dropped-element basket
-      // For different values http://api.jqueryui.com/droppable/#option-tolerance
       tolerance: "touch",
       drop: function (event, ui) {
 
@@ -157,6 +149,8 @@ $(document).ready(function () {
           // Updating the quantity by +1" rather than adding it to the basket
           move.find("input").val(parseInt(move.find("input").val()) + 1);
         }
+
+        add_fav_list(move.attr("data-id"));
       }
     });
 
@@ -174,7 +168,33 @@ $(document).ready(function () {
 
   $(function () {
     $("#fav-btn").on("click", function () {
-      add_fav();
+      try {
+        // $(this).attr("disabled", true);
+        var shoeIdToAdd = $(this).closest("div").attr("id");
+        var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+
+        if (myFavouriteShoe == null) {
+          myFavouriteShoe = [];
+        }
+
+        if (myFavouriteShoe != null) {
+          for (var j = 0; j < myFavouriteShoe.length; j++) {
+            if (shoeIdToAdd == myFavouriteShoe[j]) {
+              alert("This shoe is already added to your favourites");
+              myFavouriteShoe = [];
+            }
+          }
+        }
+
+        myFavouriteShoe.push(shoeIdToAdd);
+        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+      } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+          console.log("Error: Local storage limit exceeds");
+        } else {
+          console.log("ERROR: Saving to local storge.");
+        }
+      }
     });
   });
 
@@ -380,10 +400,9 @@ if (cartClose) {
 }
 
 /*add fav*/
-function add_fav() {
+function add_fav_list(shoeIdToAdd) {
+  console.log(shoeIdToAdd);
   try {
-    // $(this).attr("disabled", true);
-    var shoeIdToAdd = $("#fav-btn").closest("div").attr("id");
     var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
     if (myFavouriteShoe == null) {
@@ -402,11 +421,7 @@ function add_fav() {
     myFavouriteShoe.push(shoeIdToAdd);
     localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
   } catch (e) {
-    if (e == QUOTA_EXCEEDED_ERR) {
-      console.log("Error: Local storage limit exceeds");
-    } else {
-      console.log("ERROR: Saving to local storge.");
-    }
+    console.log(e);
   }
 }
 
