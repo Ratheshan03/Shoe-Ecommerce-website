@@ -38,7 +38,7 @@ $(document).ready(function () {
     var minPrice = $("#slider-range").slider("option", "values")[0];
     var maxPrice = $("#slider-range").slider("option", "values")[1];
 
-    var output = " <div class='products__container grid'>";
+    var output = " <ul class='products__container grid'>";
     $.getJSON("../shoes.json", function (data) {
       for (var i in data.shoes) {
         if (gender == data.shoes[i].gender || gender == "Any")
@@ -54,9 +54,7 @@ $(document).ready(function () {
                       {
                         {
                           output +=
-                            "<article id='" +
-                            data.shoes[i].id +
-                            "' class='products__card'><img class='products__img' alt='product' src=" +
+                            "<li data id='' class='products__card'><img class='products__img' alt='product' src=" +
                             data.shoes[i].picture +
                             ">" +
                             "<h3 class='products__title'>" +
@@ -68,14 +66,14 @@ $(document).ready(function () {
                             "</p>" +
                             "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
                             data.shoes[i].url +
-                            "'>More Details</a></button></article>";
+                            "'>More Details</a></button></li>";
                         }
                       }
                     }
                   }
                 }
       }
-      output += "</div>";
+      output += "</ul>";
       document.getElementById("products_list").innerHTML = output;
     });
   });
@@ -112,6 +110,84 @@ $(document).ready(function () {
     };
 
     var viewer = new PhotoViewer(photos, options);
+  });
+
+  //* --------- Drag and Drop ------------*//
+
+  $("li").draggable({
+    revert: true,
+
+    drag: function () {
+      $(this).addClass("active");
+      $(this).closest("li").addClass("active");
+    },
+
+    stop: function () {
+      $(this).removeClass("active").closest("li").removeClass("active");
+    },
+  });
+
+  //* Droppable Section *//
+
+  $(".basket").droppable({
+    activeClass: "active",
+    hoverClass: "hover",
+
+    tolerance: "touch",
+    drop: function (event, ui) {
+      var basket = $(this),
+        move = ui.draggable,
+        itemId = basket.find(
+          ".products__container li[data-id='" + move.attr("data-id") + "']"
+        );
+
+      if (itemId.html() != null) {
+        itemId.find("input").val(parseInt(itemId.find("input").var()) + 1);
+      } else {
+        addBasket(basket, move);
+        move.find("input").val(parseInt(move.find("input").val()) + 1);
+        alert("Item added to favourites...");
+        localStorage.setItem("favShoesDrag", move.html());
+      }
+    },
+  });
+  function addBasket(basket, move) {
+    basket
+      .find("ul")
+      .append(
+        "<li data-id='" +
+          move.attr("data-id") +
+          "' class='fav-item cart__card'> <div class='fav-box cart__box'><img src='" +
+          move.find(".products__card img").attr("src") +
+          "' class='cart__img'> </div> <div class='cart__details'> <h3 class='cart__title'>" +
+          move.find("h3").html() +
+          "</h3><span class='cart__price'> $" +
+          move.find("p").html() +
+          ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
+          move.find("button a").attr("href") +
+          "'>More Details</a></button>" +
+          "<button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></li>"
+      );
+  }
+  $(".basket ul li button.remove-btn").on("click", function () {
+    $(this).closest("li").remove();
+    alert("Item removed from favourites...");
+  });
+
+  $("ul").draggable({
+    revert: true,
+    drag: function () {
+      $(this).addClass("active");
+      $(this).closest("ul").addClass("active");
+    },
+  });
+  $("#products_list").droppable({
+    drop: function () {
+      alert("Added to favourites");
+      console.log("Added to favourites");
+      $(".basket ul li").remove();
+      console.log("Removed from favourites");
+    },
   });
 
   //* ---------- Add to Favorites ------------*//
@@ -161,7 +237,9 @@ $(document).ready(function () {
             for (j = 0; j < myFavouriteShoe.length; j++) {
               if (data.shoes[i].id == myFavouriteShoe[j]) {
                 output +=
-                  "<article class='fav-item cart__card'> <div class='fav-box cart__box'><img src='" +
+                  "<li id='" +
+                  data.shoes[i].id +
+                  "' class='fav-item cart__card'> <div class='fav-box cart__box'><img src='" +
                   data.shoes[i].picture +
                   "' class='cart__img'> </div> <div class='cart__details'> <h3 class='cart__title'>" +
                   data.shoes[i].name +
@@ -172,7 +250,7 @@ $(document).ready(function () {
                   "'>More Details</a></button>" +
                   "<div id='" +
                   data.shoes[i].id +
-                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></article>";
+                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
               }
             }
           }
@@ -186,34 +264,24 @@ $(document).ready(function () {
   //Remove item from favourites.......................................................
   $(function () {
     $("#remove-fav").on("click", function () {
-      console.log("hello");
-      try {
-        $(this).attr("disabled", true);
-        var shoeIdToRemove = $(this).closest("div").attr("id");
-        myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+      $(this).attr("abled", true);
+      var shoeIdToRemove = $(this).closest("div").attr("id");
+      myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
-        console.log(shoeIdToRemove);
-        if (myFavouriteShoe != null) {
-          for (var j = 0; j < myFavouriteShoe.length; j++) {
-            if (shoeIdToRemove == myFavouriteShoe[j]) {
-              alert("This Shoe has been removed from your favourites");
-              localStorage.removeItem();
-              delete myFavouriteShoe[j];
-              localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-              myFavouriteShoe[j] = [];
-            }
+      if (myFavouriteShoe != null) {
+        for (var j = 0; j < myFavouriteShoe.length; j++) {
+          if (shoeIdToRemove == myFavouriteShoe[j]) {
+            alert("This Shoe has been removed from your favourites");
+
+            delete myFavouriteShoe[j];
+            localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+            myFavouriteShoe[j] = [];
           }
         }
+      }
 
-        if (myFavouriteShoe == null) {
-          alert("You have no favourite items");
-        }
-      } catch (e) {
-        if (e == QUOTA_EXCEEDED_ERR) {
-          console.log("Error: Local storage limit exceeds");
-        } else {
-          console.log("ERROR: Saving to local storge.");
-        }
+      if (myFavouriteShoe == null) {
+        alert("You have no favourite items");
       }
     });
   });
