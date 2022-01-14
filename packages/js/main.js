@@ -66,9 +66,9 @@ $(document).ready(function () {
                             "$" +
                             data.shoes[i].price +
                             "</p>" +
-                            "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
+                            "<a class='more-detail-link' href='" +
                             data.shoes[i].url +
-                            "'>More Details</a></button></li>";
+                            "'><button class='button more-detail-btn'>More Details</button></a></li>";
                         }
                       }
                     }
@@ -248,9 +248,9 @@ $(document).ready(function () {
                   data.shoes[i].name +
                   "</h3><span class='cart__price'> $" +
                   data.shoes[i].price +
-                  ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
+                  ".00</span><div class='cart__amount'><a class=' more-detail-link' href='" +
                   data.shoes[i].url +
-                  "'>More Details</a></button>" +
+                  "'><button class='button fav-more-btn more-detail-btn'>More Details</button></a>" +
                   "<div id='" +
                   data.shoes[i].id +
                   "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
