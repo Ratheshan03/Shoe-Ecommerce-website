@@ -23,9 +23,9 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-        $("#slider-range").slider("values", 0) +
-        " - $" +
-        $("#slider-range").slider("values", 1)
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
     );
   });
 
@@ -146,16 +146,6 @@ $(document).ready(function () {
         }
 
         add_fav_list(move.attr("data-id"));
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Shoe Added to the Favorite list",
-          footer: "<p>To check the favorite list head over to Shop page.</p>",
-          showConfirmButton: false,
-          showCancelButton: false,
-          background: "#edfffc",
-          timer: 5000,
-        });
       },
       out: function (event, ui) {
         var basket = $(this),
@@ -182,17 +172,17 @@ $(document).ready(function () {
         .find("ul")
         .append(
           '<li data-id="' +
-            move.attr("data-id") +
-            '">' +
-            '<span class="name">' +
-            move.find("h3").html() +
-            "</span>" +
-            '<input class="count" value="1" type="text">' +
-            '<button class="delete" onclick="delete_list_item(' +
-            "'" +
-            move.attr("data-id") +
-            "'" +
-            ')">&#10005;</button>'
+          move.attr("data-id") +
+          '">' +
+          '<span class="name">' +
+          move.find("h3").html() +
+          "</span>" +
+          '<input class="count" value="1" type="text">' +
+          '<button class="delete" onclick="delete_list_item(' +
+          "'" +
+          move.attr("data-id") +
+          "'" +
+          ')">&#10005;</button>'
         );
       $("li").draggable({
         revert: true,
@@ -376,9 +366,8 @@ function slideImage() {
     ".img-showcase img:first-child"
   ).clientWidth;
 
-  document.querySelector(".img-showcase").style.transform = `translateX(${
-    -(imgId - 1) * displayWidth
-  }px)`;
+  document.querySelector(".img-showcase").style.transform = `translateX(${-(imgId - 1) * displayWidth
+    }px)`;
 }
 
 window.addEventListener("resize", slideImage);
@@ -490,36 +479,43 @@ function add_fav_list(shoeIdToAdd) {
 
     if (myFavouriteShoe == null) {
       myFavouriteShoe = [];
-    }
-
-    if (myFavouriteShoe != null) {
-      for (var i = 0; i < myFavouriteShoe.length; i++) {
-        if (shoeIdToAdd == myFavouriteShoe[i]) {
-          Swal.fire({
-            icon: "error",
-            title: "The shoe already been added to the Fav list!",
-            text: "Try to add a new shoe",
-            footer: "<p>Please view and check the Fav list</p>",
-            background: "#edfffc",
-            showCancelButton: false,
-            color: "fff",
-            timer: 5000,
-          });
-          myFavouriteShoe = [];
-        } else {
-          myFavouriteShoe.push(shoeIdToAdd);
-          localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Shoe Added to the Favorite list!",
-            footer: "<p>To check the favorite list head over to Shop page.</p>",
-            showConfirmButton: false,
-            showCancelButton: false,
-            background: "#edfffc",
-            timer: 5000,
-          });
-        }
+      myFavouriteShoe.push(shoeIdToAdd);
+      localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Shoe Added to the Favorite list",
+        footer: "<p>To check the favorite list head over to Shop page.</p>",
+        showConfirmButton: false,
+        showCancelButton: false,
+        background: "#edfffc",
+        timer: 5000,
+      });
+    } else {
+      if (myFavouriteShoe.includes(shoeIdToAdd)) {
+        Swal.fire({
+          icon: "error",
+          title: "The shoe already been added to the Fav list!",
+          text: "Try to add a new shoe",
+          footer: "<p>Please view and check the Fav list</p>",
+          background: "#edfffc",
+          showCancelButton: false,
+          color: "fff",
+          timer: 5000,
+        });
+      } else {
+        myFavouriteShoe.push(shoeIdToAdd);
+        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Shoe Added to the Favorite list!",
+          footer: "<p>To check the favorite list head over to Shop page.</p>",
+          showConfirmButton: false,
+          showCancelButton: false,
+          background: "#edfffc",
+          timer: 5000,
+        });
       }
     }
   } catch (e) {
