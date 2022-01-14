@@ -23,9 +23,9 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-      $("#slider-range").slider("values", 0) +
-      " - $" +
-      $("#slider-range").slider("values", 1)
+        $("#slider-range").slider("values", 0) +
+        " - $" +
+        $("#slider-range").slider("values", 1)
     );
   });
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
                     output +=
                       "<li data-id='" +
                       data.shoes[i].id +
-                      "'class='products__card'><img class='products__img' alt='product' src=" +
+                      "'class='products__card ui-draggable'><img class='products__img' alt='product' src=" +
                       data.shoes[i].picture +
                       ">" +
                       "<h3 class='products__title'>" +
@@ -73,23 +73,21 @@ $(document).ready(function () {
         }
         output += "</ul>";
         document.getElementById("products_list").innerHTML = output;
+
+        $("li").draggable({
+          revert: true,
+          drag: function () {
+            console.log("dragging");
+          },
+          stop: function () {
+            console.log("stopping");
+          },
+        });
       });
     });
-
-    $(".products__card").draggable({
-      revert: true,
-      drag: function () {
-        console.log("dragging");
-      },
-      stop: function () {
-        console.log("stopping");
-      }
-    });
-
   });
 
   //* Retrieving Results *//
-
 
   //* JQuery UI  Tabs *//
   $(function () {
@@ -264,7 +262,11 @@ $(document).ready(function () {
                   "'>More Details</a></button>" +
                   "<div id='" +
                   data.shoes[i].id +
-                  "'> <button type='button' class='remove-btn' onclick='remove_fav(" + '"' + data.shoes[i].id + '"' + ")'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
+                  "'> <button type='button' class='remove-btn' onclick='remove_fav(" +
+                  '"' +
+                  data.shoes[i].id +
+                  '"' +
+                  ")'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
               }
             }
           }
@@ -441,7 +443,7 @@ function remove_fav(shoeIdToRemove) {
   if (myFavouriteShoe == null) {
     alert("You have no favourite items");
   } else {
-    myFavouriteShoe.forEach(shoe => {
+    myFavouriteShoe.forEach((shoe) => {
       if (shoeIdToRemove == shoe) {
         alert("This Shoe has been removed from your favourites");
 
