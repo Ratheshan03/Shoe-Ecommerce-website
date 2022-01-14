@@ -149,6 +149,13 @@ $(document).ready(function () {
         }
 
         add_fav_list(move.attr("data-id"));
+      },
+      out: function(event, ui) {
+        var basket = $(this),
+          move = ui.draggable,
+          itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
+        itemId.remove();
+        delete_list_item(move.attr("data-id"))
       }
     });
 
@@ -434,11 +441,10 @@ function remove_fav(shoeIdToRemove) {
   } else {
     myFavouriteShoe.forEach((shoe) => {
       if (shoeIdToRemove == shoe) {
-        alert("This Shoe has been removed from your favourites");
-
         myFavouriteShoe.pop(shoeIdToRemove);
         localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
         $("#favourite_list .fav-div li#" + shoeIdToRemove).remove();
+        alert("This Shoe has been removed from your favourites");
       }
     });
   }
