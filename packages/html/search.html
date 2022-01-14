@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- A web site administrator wants to allow content from a trusted domain and all its subdomains  -->
-    <meta
-      http-equiv="Content-Security-Policy: default-src 'self' trusted.com *.trusted.com"
-    />
 
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
@@ -115,12 +112,7 @@
             <div class="sub-search grid">
               <div class="style-selection search_item">
                 <label class="search_labels" for="style">STYLE:</label>
-                <select
-                  class="select-item"
-                  name="style"
-                  id="style"
-                  aria-placeholder="Please pick one"
-                >
+                <select class="select-item" name="style" id="style">
                   <option disabled>Please pick one</option>
                   <option value="Running">Running</option>
                   <option value="Training">Training</option>
@@ -324,7 +316,7 @@
             </p>
           </div>
 
-          <form action="" class="newsletter__subscribe">
+          <form action="post" class="newsletter__subscribe">
             <input
               type="email"
               placeholder="Enter your email"
@@ -390,29 +382,35 @@
           <h3 class="footer__title">Social</h3>
 
           <ul class="footer__social">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-facebook"></i>
-            </a>
+            <li>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="footer__social-link"
+              >
+                <i class="bx bxl-facebook"></i>
+              </a>
+            </li>
 
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-twitter"></i>
-            </a>
+            <li>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                class="footer__social-link"
+              >
+                <i class="bx bxl-twitter"></i>
+              </a>
+            </li>
 
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-instagram"></i>
-            </a>
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="footer__social-link"
+              >
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
