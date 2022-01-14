@@ -64,7 +64,7 @@ $(document).ready(function () {
                       "$" +
                       data.shoes[i].price +
                       "</p>" +
-                      "<button class='button more-detail-btn'><a class='more-detail-link' target='blank' href='" +
+                      "<button class='button more-detail-btn'><a class='more-detail-link' target='_blank' href='" +
                       data.shoes[i].url +
                       "'>More Details</a></button></li>";
                   }
@@ -162,30 +162,16 @@ $(document).ready(function () {
         .find("ul")
         .append(
           '<li data-id="' +
-<<<<<<< HEAD
             move.attr("data-id") +
             '">' +
             '<span class="name">' +
             move.find("h3").html() +
             "</span>" +
-            '<input class="count" value="1" type="text">' +
             '<button class="delete" onclick="delete_list_item(' +
             "'" +
             move.attr("data-id") +
             "'" +
             ')">&#10005;</button>'
-=======
-          move.attr("data-id") +
-          '">' +
-          '<span class="name">' +
-          move.find("h3").html() +
-          "</span>" +
-          '<button class="delete" onclick="delete_list_item(' +
-          "'" +
-          move.attr("data-id") +
-          "'" +
-          ')">&#10005;</button>'
->>>>>>> be3053a2b31b5848ec4e259e8e197a3a4b3ad06e
         );
       $("li").draggable({
         revert: true,
@@ -257,7 +243,7 @@ $(document).ready(function () {
                   data.shoes[i].name +
                   "</h3><span class='cart__price'> $" +
                   data.shoes[i].price +
-                  ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
+                  ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' target='_blank' href='" +
                   data.shoes[i].url +
                   "'>More Details</a></button>" +
                   "<div id='" +
