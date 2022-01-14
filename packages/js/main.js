@@ -23,9 +23,9 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-        $("#slider-range").slider("values", 0) +
-        " - $" +
-        $("#slider-range").slider("values", 1)
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
     );
   });
 
@@ -125,82 +125,50 @@ $(document).ready(function () {
 
   // //* --------- Drag and Drop ------------*//
 
-  // $("#products_list li").draggable({
-  //   revert: true,
 
-  //   drag: function () {
-  //     $(this).addClass("active");
-  //     $(this).closest("#products_list").addClass("active");
-  //   },
+  $(function () {
 
-  //   stop: function () {
-  //     $(this)
-  //       .removeClass("active")
-  //       .closest("#products_list")
-  //       .removeClass("active");
-  //   },
-  // });
+    // jQuery Ui Droppable
+    $(".basket").droppable({
 
-  // //* Droppable Section *//
+      // The class that will be appended to the to-be-dropped-element (basket)
+      activeClass: "active",
 
-  // $(".basket").droppable({
-  //   activeClass: "active",
-  //   hoverClass: "hover",
+      // The class that will be appended once we are hovering the to-be-dropped-element (basket)
+      hoverClass: "hover",
 
-  //   tolerance: "touch",
-  //   drop: function (event, ui) {
-  //     var basket = $(this),
-  //       move = ui.draggable,
-  //       itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
+      // The acceptance of the item once it touches the to-be-dropped-element basket
+      // For different values http://api.jqueryui.com/droppable/#option-tolerance
+      tolerance: "touch",
+      drop: function (event, ui) {
 
-  //     if (itemId.html() != null) {
-  //       itemId.find("input").val(parseInt(itemId.find("input").var()) + 1);
-  //     } else {
-  //       addBasket(basket, move);
-  //       move.find("input").val(parseInt(move.find("input").val()) + 1);
-  //       alert("Item added to favourites...");
-  //       localStorage.setItem("favShoesDrag", move.html());
-  //     }
-  //   },
-  // });
-  // function addBasket(basket, move) {
-  //   basket
-  //     .find("ul")
-  //     .append(
-  //       "<li data-id='" +
-  //         move.attr("data-id") +
-  //         "' class='fav-item cart__card'> <div class='fav-box cart__box'><img src='" +
-  //         move.find(".products__card img").attr("src") +
-  //         "' class='cart__img'> </div> <div class='cart__details'> <h3 class='cart__title'>" +
-  //         move.find("h3").html() +
-  //         "</h3><span class='cart__price'> $" +
-  //         move.find("p").html() +
-  //         ".00</span><div class='cart__amount'><button class='button fav-more-btn more-detail-btn'><a class=' more-detail-link' href='" +
-  //         move.find("button a").attr("href") +
-  //         "'>More Details</a></button>" +
-  //         "<button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></li>"
-  //     );
-  // }
-  // $(".basket ul li button.remove-btn").live("click", function () {
-  //   $(this).closest("li").remove();
-  //   alert("Item removed from favourites...");
-  // });
+        var basket = $(this),
+          move = ui.draggable,
+          itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
 
-  // $("ul").draggable({
-  //   revert: true,
-  //   drag: function () {
-  //     $(this).addClass("active");
-  //     $(this).closest("ul").addClass("active");
-  //   },
-  // });
-  // $("#products_list").droppable({
-  //   drop: function () {
-  //     alert("Added to favourites");
-  //     console.log("Added to favourites");
-  //     $(".basket ul li").remove();
-  //     console.log("Removed from favourites");
-  //   },
-  // });
+        // To increase the value by +1 if the same item is already in the basket
+        if (itemId.html() != null) {
+          itemId.find("input").val(parseInt(itemId.find("input").val()) + 1);
+        }
+        else {
+          // Add the dragged item to the basket
+          addBasket(basket, move);
+
+          // Updating the quantity by +1" rather than adding it to the basket
+          move.find("input").val(parseInt(move.find("input").val()) + 1);
+        }
+      }
+    });
+
+    // This function runs onc ean item is added to the basket
+    function addBasket(basket, move) {
+      basket.find("ul").append('<li data-id="' + move.attr("data-id") + '">'
+        + '<span class="name">' + move.find("h3").html() + '</span>'
+        + '<input class="count" value="1" type="text">'
+        + '<button class="delete" onclick="delete_list_item(' + "'" + move.attr("data-id") + "'" + ')">&#10005;</button>');
+    }
+
+  });
 
   //* ---------- Add to Favorites ------------*//
 
@@ -454,4 +422,9 @@ function remove_fav(shoeIdToRemove) {
     });
   }
   console.log("working...");
+}
+
+// The function that is triggered once delete button is pressed
+function delete_list_item(shoe_id) {
+  $(`.basket_list li[data-id="${shoe_id}"]`).closest("li").remove();
 }
