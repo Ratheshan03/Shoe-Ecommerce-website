@@ -1,19 +1,5 @@
 /*================ JQuery =================*/
 
-// //* --------- Drag and Drop ------------*//
-
-$(function () {
-  $("#dragthis").draggable({
-    revert: true,
-    drag: function () {
-      console.log("dragging");
-    },
-    stop: function () {
-      console.log("stopping");
-    }
-  });
-});
-
 $(document).ready(function () {
   $(".default_option").click(function () {
     $(".dropdown ul").addClass("active");
@@ -43,52 +29,67 @@ $(document).ready(function () {
     );
   });
 
-  //* Retrieving Results *//
-  $("#submit-btn").on("click", function (e) {
-    var style = $("#style").val();
-    var gender = $("#gender").val();
-    var size = $("#size").val();
-    var color = $("#color").val();
-    var minPrice = $("#slider-range").slider("option", "values")[0];
-    var maxPrice = $("#slider-range").slider("option", "values")[1];
+  $(function () {
+    $("#submit-btn").on("click", function (e) {
+      var style = $("#style").val();
+      var gender = $("#gender").val();
+      var size = $("#size").val();
+      var color = $("#color").val();
+      var minPrice = $("#slider-range").slider("option", "values")[0];
+      var maxPrice = $("#slider-range").slider("option", "values")[1];
 
-    var output = " <ul class='products__container grid'>";
-    $.getJSON("../shoes.json", function (data) {
-      for (var i in data.shoes) {
-        if (gender == data.shoes[i].gender || gender == "Any") {
-          if (style == data.shoes[i].style || style == "Any") {
-            if (data.shoes[i].sizes.includes(+size) || size == "Any") {
-              if (color == data.shoes[i].color || color == "Any") {
-                if (
-                  data.shoes[i].price >= minPrice &&
-                  data.shoes[i].price <= maxPrice
-                ) {
-                  output +=
-                    "<li data-id='" +
-                    data.shoes[i].id +
-                    "'class='products__card'><img class='products__img' alt='product' src=" +
-                    data.shoes[i].picture +
-                    ">" +
-                    "<h3 class='products__title'>" +
-                    data.shoes[i].name +
-                    "</h3>" +
-                    "<p class='products__price'>" +
-                    "$" +
-                    data.shoes[i].price +
-                    "</p>" +
-                    "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
-                    data.shoes[i].url +
-                    "'>More Details</a></button></li>";
+      var output = " <ul class='products__container grid'>";
+      $.getJSON("../shoes.json", function (data) {
+        for (var i in data.shoes) {
+          if (gender == data.shoes[i].gender || gender == "Any") {
+            if (style == data.shoes[i].style || style == "Any") {
+              if (data.shoes[i].sizes.includes(+size) || size == "Any") {
+                if (color == data.shoes[i].color || color == "Any") {
+                  if (
+                    data.shoes[i].price >= minPrice &&
+                    data.shoes[i].price <= maxPrice
+                  ) {
+                    output +=
+                      "<li data-id='" +
+                      data.shoes[i].id +
+                      "'class='products__card'><img class='products__img' alt='product' src=" +
+                      data.shoes[i].picture +
+                      ">" +
+                      "<h3 class='products__title'>" +
+                      data.shoes[i].name +
+                      "</h3>" +
+                      "<p class='products__price'>" +
+                      "$" +
+                      data.shoes[i].price +
+                      "</p>" +
+                      "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
+                      data.shoes[i].url +
+                      "'>More Details</a></button></li>";
+                  }
                 }
               }
             }
           }
         }
-      }
-      output += "</ul>";
-      document.getElementById("products_list").innerHTML = output;
+        output += "</ul>";
+        document.getElementById("products_list").innerHTML = output;
+      });
     });
+
+    $(".products__card").draggable({
+      revert: true,
+      drag: function () {
+        console.log("dragging");
+      },
+      stop: function () {
+        console.log("stopping");
+      }
+    });
+
   });
+
+  //* Retrieving Results *//
+
 
   //* JQuery UI  Tabs *//
   $(function () {
