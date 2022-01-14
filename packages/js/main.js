@@ -23,11 +23,13 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-      $("#slider-range").slider("values", 0) +
-      " - $" +
-      $("#slider-range").slider("values", 1)
+        $("#slider-range").slider("values", 0) +
+        " - $" +
+        $("#slider-range").slider("values", 1)
     );
   });
+
+  //*--------- Search Functionality ---------*//
 
   $(function () {
     $("#submit-btn").on("click", function (e) {
@@ -62,7 +64,7 @@ $(document).ready(function () {
                       "$" +
                       data.shoes[i].price +
                       "</p>" +
-                      "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
+                      "<button class='button more-detail-btn'><a class='more-detail-link' target='blank' href='" +
                       data.shoes[i].url +
                       "'>More Details</a></button></li>";
                   }
@@ -75,7 +77,7 @@ $(document).ready(function () {
         document.getElementById("products_list").innerHTML = output;
 
         $("li").draggable({
-          revert: true
+          revert: true,
         });
       });
     });
@@ -119,19 +121,15 @@ $(document).ready(function () {
 
   // //* --------- Drag and Drop ------------*//
 
-
   $(function () {
-
     // jQuery Ui Droppable
     $(".basket").droppable({
-
       activeClass: "active",
 
       hoverClass: "hover",
 
       tolerance: "touch",
       drop: function (event, ui) {
-
         var basket = $(this),
           move = ui.draggable,
           itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
@@ -139,8 +137,7 @@ $(document).ready(function () {
         // To increase the value by +1 if the same item is already in the basket
         if (itemId.html() != null) {
           itemId.find("input").val(parseInt(itemId.find("input").val()) + 1);
-        }
-        else {
+        } else {
           // Add the dragged item to the basket
           addBasket(basket, move);
 
@@ -150,23 +147,35 @@ $(document).ready(function () {
 
         add_fav_list(move.attr("data-id"));
       },
-      out: function(event, ui) {
+      out: function (event, ui) {
         var basket = $(this),
           move = ui.draggable,
           itemId = basket.find("ul li[data-id='" + move.attr("data-id") + "']");
         itemId.remove();
-        delete_list_item(move.attr("data-id"))
-      }
+        delete_list_item(move.attr("data-id"));
+      },
     });
 
-    // This function runs onc ean item is added to the basket
+    // This function runs once item is added to the basket
     function addBasket(basket, move) {
-      basket.find("ul").append('<li data-id="' + move.attr("data-id") + '">'
-        + '<span class="name">' + move.find("h3").html() + '</span>'
-        + '<input class="count" value="1" type="text">'
-        + '<button class="delete" onclick="delete_list_item(' + "'" + move.attr("data-id") + "'" + ')">&#10005;</button>');
+      basket
+        .find("ul")
+        .append(
+          '<li data-id="' +
+            move.attr("data-id") +
+            '">' +
+            '<span class="name">' +
+            move.find("h3").html() +
+            "</span>" +
+            '<input class="count" value="1" type="text">' +
+            '<button class="delete" onclick="delete_list_item(' +
+            "'" +
+            move.attr("data-id") +
+            "'" +
+            ')">&#10005;</button>'
+        );
       $("li").draggable({
-        revert: true
+        revert: true,
       });
     }
   });
@@ -284,29 +293,29 @@ $(document).ready(function () {
 
 //* -------------------- Shoe Page ------------------- *//
 
-// const imgs = document.querySelectorAll(".img-select a");
-// const imgBtns = [...imgs];
-// let imgId = 1;
+const imgs = document.querySelectorAll(".img-select a");
+const imgBtns = [...imgs];
+let imgId = 1;
 
-// imgBtns.forEach((imgItem) => {
-//   imgItem.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     imgId = imgItem.dataset.id;
-//     slideImage();
-//   });
-// });
+imgBtns.forEach((imgItem) => {
+  imgItem.addEventListener("click", (event) => {
+    event.preventDefault();
+    imgId = imgItem.dataset.id;
+    slideImage();
+  });
+});
 
-// function slideImage() {
-//   const displayWidth = document.querySelector(
-//     ".img-showcase img:first-child"
-//   ).clientWidth;
+function slideImage() {
+  const displayWidth = document.querySelector(
+    ".img-showcase img:first-child"
+  ).clientWidth;
 
-//   document.querySelector(".img-showcase").style.transform = `translateX(${
-//     -(imgId - 1) * displayWidth
-//   }px)`;
-// }
+  document.querySelector(".img-showcase").style.transform = `translateX(${
+    -(imgId - 1) * displayWidth
+  }px)`;
+}
 
-// window.addEventListener("resize", slideImage);
+window.addEventListener("resize", slideImage);
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),
