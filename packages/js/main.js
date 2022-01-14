@@ -194,7 +194,7 @@ $(document).ready(function () {
   $(function () {
     $("#fav-btn").on("click", function () {
       try {
-        $(this).attr("disabled", true);
+        // $(this).attr("disabled", true);
         var shoeIdToAdd = $(this).closest("div").attr("id");
         var myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
@@ -249,7 +249,7 @@ $(document).ready(function () {
                   "'>More Details</a></button>" +
                   "<div id='" +
                   data.shoes[i].id +
-                  "'> <button type='button' class='remove-btn' id='remove-fav' onclick='remove_fav(" + '"' + data.shoes[i].id + '"' + ")'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
+                  "'> <button type='button' class='remove-btn' onclick='remove_fav(" + '"' + data.shoes[i].id + '"' + ")'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
               }
             }
           }
@@ -263,7 +263,7 @@ $(document).ready(function () {
   //Remove item from favourites.......................................................
   $(function () {
     $("#remove-fav").on("click", function () {
-      $(this).attr("abled", true);
+      // $(this).attr("abled", true);
       var shoeIdToRemove = $(this).closest("div").attr("id");
       myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
 
@@ -272,9 +272,9 @@ $(document).ready(function () {
           if (shoeIdToRemove == myFavouriteShoe[j]) {
             alert("This Shoe has been removed from your favourites");
 
-            delete myFavouriteShoe[j];
+            myFavouriteShoe.pop(shoeIdToRemove);
             localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
-            myFavouriteShoe[j] = [];
+            $("#favourite_list .fav-div li#" + shoeIdToRemove ).remove();
           }
         }
       }
@@ -430,6 +430,7 @@ function remove_fav(shoeIdToRemove) {
 
         myFavouriteShoe.pop(shoeIdToRemove);
         localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+        $("#favourite_list .fav-div li#" + shoeIdToRemove ).remove();
       }
     }
   }
