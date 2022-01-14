@@ -77,8 +77,6 @@ $(document).ready(function () {
         $("li").draggable({
           revert: true
         });
-
-
       });
     });
   });
@@ -160,8 +158,10 @@ $(document).ready(function () {
         + '<span class="name">' + move.find("h3").html() + '</span>'
         + '<input class="count" value="1" type="text">'
         + '<button class="delete" onclick="delete_list_item(' + "'" + move.attr("data-id") + "'" + ')">&#10005;</button>');
+      $("li").draggable({
+        revert: true
+      });
     }
-
   });
 
   //* ---------- Add to Favorites ------------*//
@@ -268,6 +268,7 @@ $(document).ready(function () {
   $(function () {
     $(".clearFavourites").on("click", function () {
       $("#favourite_list").remove();
+      $(".basket_list li").remove();
       myFavouriteShoe = JSON.parse(localStorage.getItem("favshoes"));
       localStorage.clear();
     });
