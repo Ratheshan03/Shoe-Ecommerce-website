@@ -1,5 +1,19 @@
 /*================ JQuery =================*/
 
+// //* --------- Drag and Drop ------------*//
+
+$(function () {
+  $("#dragthis").draggable({
+    revert: true,
+    drag: function () {
+      console.log("dragging");
+    },
+    stop: function () {
+      console.log("stopping");
+    }
+  });
+});
+
 $(document).ready(function () {
   $(".default_option").click(function () {
     $(".dropdown ul").addClass("active");
