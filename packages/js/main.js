@@ -423,7 +423,9 @@ if (cartClose) {
 /*remove fav*/
 function remove_fav(shoeIdToRemove) {
   myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
-  if (myFavouriteShoe != null) {
+  if (myFavouriteShoe == null) {
+    alert("You have no favourite items");
+  } else {
     myFavouriteShoe.forEach(shoe => {
       if (shoeIdToRemove == shoe) {
         alert("This Shoe has been removed from your favourites");
@@ -434,8 +436,5 @@ function remove_fav(shoeIdToRemove) {
       }
     });
   }
-
-  if (myFavouriteShoe == null) {
-    alert("You have no favourite items");
-  }
+  console.log("working...");
 }
