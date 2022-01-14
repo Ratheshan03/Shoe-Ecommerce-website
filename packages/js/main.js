@@ -23,9 +23,9 @@ $(document).ready(function () {
     });
     $("#amount").val(
       "$" +
-        $("#slider-range").slider("values", 0) +
-        " - $" +
-        $("#slider-range").slider("values", 1)
+      $("#slider-range").slider("values", 0) +
+      " - $" +
+      $("#slider-range").slider("values", 1)
     );
   });
 
@@ -41,39 +41,35 @@ $(document).ready(function () {
     var output = " <ul class='products__container grid'>";
     $.getJSON("../shoes.json", function (data) {
       for (var i in data.shoes) {
-        if (gender == data.shoes[i].gender || gender == "Any")
-          if (style == data.shoes[i].style || style == "Any")
-            if (size == data.shoes[i].sizes || size == "Any")
-              if (color == data.shoes[i].color || color == "Any")
+        if (gender == data.shoes[i].gender || gender == "Any") {
+          if (style == data.shoes[i].style || style == "Any") {
+            if (data.shoes[i].sizes.includes(+size) || size == "Any") {
+              if (color == data.shoes[i].color || color == "Any") {
                 if (
                   data.shoes[i].price >= minPrice &&
                   data.shoes[i].price <= maxPrice
                 ) {
-                  {
-                    {
-                      {
-                        {
-                          output +=
-                            "<li data-id='" +
-                            data.shoes[i].id +
-                            "'class='products__card'><img class='products__img' alt='product' src=" +
-                            data.shoes[i].picture +
-                            ">" +
-                            "<h3 class='products__title'>" +
-                            data.shoes[i].name +
-                            "</h3>" +
-                            "<p class='products__price'>" +
-                            "$" +
-                            data.shoes[i].price +
-                            "</p>" +
-                            "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
-                            data.shoes[i].url +
-                            "'>More Details</a></button></li>";
-                        }
-                      }
-                    }
-                  }
+                  output +=
+                    "<li data-id='" +
+                    data.shoes[i].id +
+                    "'class='products__card'><img class='products__img' alt='product' src=" +
+                    data.shoes[i].picture +
+                    ">" +
+                    "<h3 class='products__title'>" +
+                    data.shoes[i].name +
+                    "</h3>" +
+                    "<p class='products__price'>" +
+                    "$" +
+                    data.shoes[i].price +
+                    "</p>" +
+                    "<button class='button more-detail-btn'><a class='more-detail-link' href='" +
+                    data.shoes[i].url +
+                    "'>More Details</a></button></li>";
                 }
+              }
+            }
+          }
+        }
       }
       output += "</ul>";
       document.getElementById("products_list").innerHTML = output;
