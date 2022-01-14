@@ -162,6 +162,7 @@ $(document).ready(function () {
         .find("ul")
         .append(
           '<li data-id="' +
+<<<<<<< HEAD
             move.attr("data-id") +
             '">' +
             '<span class="name">' +
@@ -173,6 +174,18 @@ $(document).ready(function () {
             move.attr("data-id") +
             "'" +
             ')">&#10005;</button>'
+=======
+          move.attr("data-id") +
+          '">' +
+          '<span class="name">' +
+          move.find("h3").html() +
+          "</span>" +
+          '<button class="delete" onclick="delete_list_item(' +
+          "'" +
+          move.attr("data-id") +
+          "'" +
+          ')">&#10005;</button>'
+>>>>>>> be3053a2b31b5848ec4e259e8e197a3a4b3ad06e
         );
       $("li").draggable({
         revert: true,
