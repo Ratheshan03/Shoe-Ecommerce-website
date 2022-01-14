@@ -249,7 +249,7 @@ $(document).ready(function () {
                   "'>More Details</a></button>" +
                   "<div id='" +
                   data.shoes[i].id +
-                  "'> <button type='button' class='remove-btn' id='remove-fav'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
+                  "'> <button type='button' class='remove-btn' id='remove-fav' onclick='remove_fav(" + '"' + data.shoes[i].id + '"' + ")'> <i class='bx bx-trash-alt cart__amount-trash'></i></button></div></div></div></li>";
               }
             }
           }
@@ -262,7 +262,7 @@ $(document).ready(function () {
 
   //Remove item from favourites.......................................................
   $(function () {
-    $("#remove-btn").on("click", function () {
+    $("#remove-fav").on("click", function () {
       $(this).attr("abled", true);
       var shoeIdToRemove = $(this).closest("div").attr("id");
       myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
@@ -418,4 +418,23 @@ if (cartClose) {
   cartClose.addEventListener("click", () => {
     cart.classList.remove("show-cart");
   });
+}
+
+/*remove fav*/
+function remove_fav(shoeIdToRemove) {
+  myFavouriteShoe = JSON.parse(localStorage.getItem("favShoes"));
+  if (myFavouriteShoe != null) {
+    for (var j = 0; j < myFavouriteShoe.length; j++) {
+      if (shoeIdToRemove == myFavouriteShoe[j]) {
+        alert("This Shoe has been removed from your favourites");
+
+        myFavouriteShoe.pop(shoeIdToRemove);
+        localStorage.setItem("favShoes", JSON.stringify(myFavouriteShoe));
+      }
+    }
+  }
+
+  if (myFavouriteShoe == null) {
+    alert("You have no favourite items");
+  }
 }
