@@ -167,7 +167,6 @@ $(document).ready(function () {
           '<span class="name">' +
           move.find("h3").html() +
           "</span>" +
-          '<input class="count" value="1" type="text">' +
           '<button class="delete" onclick="delete_list_item(' +
           "'" +
           move.attr("data-id") +
