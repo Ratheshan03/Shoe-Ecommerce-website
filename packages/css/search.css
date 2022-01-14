@@ -1,0 +1,121 @@
+.basket {
+    position: relative;
+}
+
+.basket .basket_list {
+    width: 220px;
+    background-color: #fff;
+    border: 2px dashed transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.basket.active .basket_list,
+.basket.hover .basket_list { border-color: #ffa0a3 }
+
+.basket.active .basket_list { background-color: #fff8c1 }
+
+.basket.hover .basket_list { background-color: #ffa0a3 }
+
+/* .head */
+
+.basket .head {
+    overflow: hidden;
+    margin: 0 10px;
+    height: 26px;
+    line-height: 26px;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.basket .head .name { float: left }
+
+.basket .head .count { float: right }
+
+/* .head */
+
+.basket ul { padding-bottom: 10px }
+
+.basket ul li {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    margin: 0 10px;
+    height: 26px;
+    line-height: 32px;
+    border-bottom: 1px dashed #eee;
+}
+
+.basket ul li:hover { border-bottom-color: #ccc }
+
+
+.basket ul li span.name {
+    display: block;
+    float: left;
+    width: 165px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-transition: width .2s ease;
+    -moz-transition: width .2s ease;
+    -o-transition: width .2s ease;
+    -ms-transition: width .2s ease;
+    transition: width .2s ease;
+}
+
+.basket ul li:hover span.name { width: 146px }
+
+.basket ul li input.count {
+    float: right;
+    margin: 3px 2px 0 0;
+    width: 25px;
+    line-height: 20px;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    background-color: #ddd;
+}
+
+.basket ul li button.delete {
+    position: absolute;
+    right: 30px;
+    top: 3px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity = 0);
+    opacity: 0;
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 11px;
+    border: 0;
+    color: #EE5757;
+    background-color: #eee;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: opacity .2s ease;
+    -moz-transition: opacity .2s ease;
+    -o-transition: opacity .2s ease;
+    -ms-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+
+.basket ul li:hover button.delete {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity = 100);
+    opacity: 1;
+}
+
+.basket ul li button.delete:hover {
+    color: #fff;
+    background-color: #ffa0a3;
+}
+
+.basket ul li button.delete:active {
+    color: #fff;
+    background-color: #EE5757;
+}
