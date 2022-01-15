@@ -518,16 +518,6 @@ function delete_list_item(shoe_id) {
   );
 }
 
-function swal_message_gen(icon, title, footer, background) {
-  alert(title);
-  // Swal.fire({
-  //   position: "center",
-  //   icon: icon,
-  //   title: title,
-  //   footer: footer,
-  //   showConfirmButton: false,
-  //   showCancelButton: false,
-  //   background: background,
-  //   timer: 5000,
-  // });
+function swal_message_gen(icon, title, body, background) {
+  swal(title,body,icon);
 }

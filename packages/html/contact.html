@@ -1,279 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- A web site administrator wants to allow content from a trusted domain and all its subdomains  -->
-    <meta
-      http-equiv="Content-Security-Policy: default-src 'self' trusted.com *.trusted.com"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+  <!-- A web site administrator wants to allow content from a trusted domain and all its subdomains  -->
+  <meta http-equiv="Content-Security-Policy: default-src 'self' trusted.com *.trusted.com" />
 
-    <!--=============== jquery-ui CSS ================-->
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
-    />
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
 
-    <!--=============== BOXICONS ===============-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
+  <!--=============== jquery-ui CSS ================-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />
 
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../css/styles.css" />
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
 
-    <title>CARNAGE</title>
-  </head>
-  <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">
-          <i class="bx bxs-shopping-bag nav__logo-icon"></i> CARNAGE SHOES
-        </a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="../../index.html" class="nav__link">HOME</a>
-            </li>
-            <li class="nav__item">
-              <a href="../html/search.html" class="nav__link">SHOP</a>
-            </li>
-            <li class="nav__item">
-              <a href="../html/contact.html" class="nav__link active-link"
-                >CONTACT</a
-              >
-            </li>
-          </ul>
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="../css/styles.css" />
 
-          <div class="nav__close" id="nav-close">
-            <i class="bx bx-x"></i>
-          </div>
-        </div>
+  <title>CARNAGE</title>
+</head>
 
-        <div class="nav__btns">
-          <div class="nav__shop">
-            <i class="bx bx-shopping-bag"></i>
-          </div>
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <i class="bx bxs-shopping-bag nav__logo-icon"></i> CARNAGE SHOES
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../../index.html" class="nav__link">HOME</a>
+          </li>
+          <li class="nav__item">
+            <a href="../html/search.html" class="nav__link">SHOP</a>
+          </li>
+          <li class="nav__item">
+            <a href="../html/contact.html" class="nav__link active-link">CONTACT</a>
+          </li>
+        </ul>
 
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="bx bx-grid-alt"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main">
-      <!--==================== CONTACT ====================-->
-      <section class="contact section container" id="contact">
-        <div class="contact__container grid">
-          <div class="contact__box">
-            <h2 class="contact__title">
-              Reach out to us today <br />
-              via any of the given <br />
-              information
-            </h2>
-
-            <div class="contact__data">
-              <div class="contact__information">
-                <h3 class="contact__subtitle">Call us for instant support</h3>
-                <span class="contact__description">
-                  <i class="ri-phone-line contact__icon"></i>
-                  +071 9993444
-                </span>
-                <br />
-                <span class="contact__description">
-                  <i class="ri-whatsapp-line contact__icon"></i>
-                  +077 9993444
-                </span>
-              </div>
-
-              <div class="contact__information">
-                <h3 class="contact__subtitle">Write us by mail</h3>
-                <span class="contact__description">
-                  <i class="ri-mail-line contact__icon"></i>
-                  carnage@gmail.com
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <form
-            action="mailto:lionratheshan@gmail.com"
-            method="post"
-            enctype="text/plain"
-            class="contact__form"
-          >
-            <div class="contact__inputs">
-              <div class="contact__content">
-                <input type="email" placeholder=" " class="contact__input" />
-                <label for="" class="contact__label">Email</label>
-              </div>
-
-              <div class="contact__content">
-                <input type="text" placeholder=" " class="contact__input" />
-                <label for="" class="contact__label">Subject</label>
-              </div>
-
-              <div class="contact__content contact__area">
-                <textarea
-                  name="message"
-                  placeholder=" "
-                  class="contact__input"
-                ></textarea>
-                <label for="" class="contact__label">Message</label>
-              </div>
-            </div>
-
-            <button type="submit" class="button button--flex contact__btn">
-              Send Message
-              <i class="ri-arrow-right-up-line button__icon"></i>
-            </button>
-          </form>
-        </div>
-      </section>
-      <!--==================== NEWSLETTER ====================-->
-      <section class="newsletter section container">
-        <div class="newsletter__bg grid">
-          <div>
-            <h2 class="newsletter__title">
-              Subscribe Our <br />
-              Newsletter
-            </h2>
-            <p class="newsletter__description">
-              Don't miss out on your discounts. Subscribe to our email
-              newsletter to get the best offers, discounts, coupons, gifts and
-              much more.
-            </p>
-          </div>
-
-          <form action="" class="newsletter__subscribe">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="newsletter__input"
-            />
-            <button class="button">SUBSCRIBE</button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer section">
-      <div class="footer__container container grid">
-        <div class="footer__content">
-          <h3 class="footer__title">Our information</h3>
-
-          <ul class="footer__list">
-            <li>0307 - Kandy</li>
-            <li>Wonder of Asia</li>
-            <li>076-5455023</li>
-          </ul>
-        </div>
-        <div class="footer__content">
-          <h3 class="footer__title">About Us</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Support Center</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Customer Support</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">About Us</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Copy Right</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Product</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Road bikes</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Mountain bikes</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Electric</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Accesories</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Social</h3>
-
-          <ul class="footer__social">
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="bx bxl-facebook"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="bx bxl-twitter"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="bx bxl-instagram"></i>
-              </a>
-            </li>
-          </ul>
+        <div class="nav__close" id="nav-close">
+          <i class="bx bx-x"></i>
         </div>
       </div>
 
-      <span class="footer__copy">&#169; Ratheshan03. All rigths reserved</span>
-    </footer>
+      <div class="nav__btns">
+        <div class="nav__shop">
+          <i class="bx bx-shopping-bag"></i>
+        </div>
 
-    <!--=============== SCROLL UP ===============-->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
-    </a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-grid-alt"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!--=============== SWEET ALERT ===============-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== CONTACT ====================-->
+    <section class="contact section container" id="contact">
+      <div class="contact__container grid">
+        <div class="contact__box">
+          <h2 class="contact__title">
+            Reach out to us today <br />
+            via any of the given <br />
+            information
+          </h2>
 
-    <!--=============== SWIPER JS ===============-->
-    <script src="../js/swiper-bundle.min.js"></script>
+          <div class="contact__data">
+            <div class="contact__information">
+              <h3 class="contact__subtitle">Call us for instant support</h3>
+              <span class="contact__description">
+                <i class="ri-phone-line contact__icon"></i>
+                +071 9993444
+              </span>
+              <br />
+              <span class="contact__description">
+                <i class="ri-whatsapp-line contact__icon"></i>
+                +077 9993444
+              </span>
+            </div>
 
-    <!--================== jquery ======================-->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+            <div class="contact__information">
+              <h3 class="contact__subtitle">Write us by mail</h3>
+              <span class="contact__description">
+                <i class="ri-mail-line contact__icon"></i>
+                carnage@gmail.com
+              </span>
+            </div>
+          </div>
+        </div>
 
-    <!--=============== MAIN JS ===============-->
-    <script src="../js/main.js"></script>
-  </body>
+        <form action="mailto:lionratheshan@gmail.com" method="post" enctype="text/plain" class="contact__form">
+          <div class="contact__inputs">
+            <div class="contact__content">
+              <input type="email" placeholder=" " class="contact__input" />
+              <label for="" class="contact__label">Email</label>
+            </div>
+
+            <div class="contact__content">
+              <input type="text" placeholder=" " class="contact__input" />
+              <label for="" class="contact__label">Subject</label>
+            </div>
+
+            <div class="contact__content contact__area">
+              <textarea name="message" placeholder=" " class="contact__input"></textarea>
+              <label for="" class="contact__label">Message</label>
+            </div>
+          </div>
+
+          <button type="submit" class="button button--flex contact__btn">
+            Send Message
+            <i class="ri-arrow-right-up-line button__icon"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!--==================== NEWSLETTER ====================-->
+    <section class="newsletter section container">
+      <div class="newsletter__bg grid">
+        <div>
+          <h2 class="newsletter__title">
+            Subscribe Our <br />
+            Newsletter
+          </h2>
+          <p class="newsletter__description">
+            Don't miss out on your discounts. Subscribe to our email
+            newsletter to get the best offers, discounts, coupons, gifts and
+            much more.
+          </p>
+        </div>
+
+        <form action="" class="newsletter__subscribe">
+          <input type="email" placeholder="Enter your email" class="newsletter__input" />
+          <button class="button">SUBSCRIBE</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Our information</h3>
+
+        <ul class="footer__list">
+          <li>0307 - Kandy</li>
+          <li>Wonder of Asia</li>
+          <li>076-5455023</li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">About Us</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Support Center</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Customer Support</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Copy Right</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Product</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Road bikes</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Mountain bikes</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Electric</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Accesories</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Social</h3>
+
+        <ul class="footer__social">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+              <i class="bx bxl-facebook"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <span class="footer__copy">&#169; Ratheshan03. All rigths reserved</span>
+  </footer>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+  </a>
+
+  <!--=============== SWEET ALERT ===============-->
+  <script src="../js/sweetalert.min.js"></script>
+
+  <!--=============== SWIPER JS ===============-->
+  <script src="../js/swiper-bundle.min.js"></script>
+
+  <!--================== jquery ======================-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="../js/main.js"></script>
+</body>
+
 </html>

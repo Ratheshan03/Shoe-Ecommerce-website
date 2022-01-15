@@ -1,645 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--=============== jquery-ui CSS ================-->
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
-    />
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+  <!--=============== jquery-ui CSS ================-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />
 
-    <!--=============== BOXICONS ===============-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="../../css/swiper-bundle.min.css" />
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 
-    <link
-      href="../../photoviewer-master/dist/photoviewer.min.css"
-      rel="stylesheet"
-    />
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css" />
 
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../../css/styles.css" />
+  <link href="../../photoviewer-master/dist/photoviewer.min.css" rel="stylesheet" />
 
-    <title>CARNAGE</title>
-  </head>
-  <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">
-          <i class="bx bxs-shopping-bag nav__logo-icon"></i> CARNAGE SHOES
-        </a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="../../../index.html" class="nav__link">HOME</a>
-            </li>
-            <li class="nav__item">
-              <a href="../../html/search.html" class="nav__link">SHOP</a>
-            </li>
-            <li class="nav__item">
-              <a href="../../html/contact.html" class="nav__link">CONTACT</a>
-            </li>
-          </ul>
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-          <div class="nav__close" id="nav-close">
-            <i class="bx bx-x"></i>
-          </div>
-        </div>
+  <title>CARNAGE</title>
+</head>
 
-        <div class="nav__btns">
-          <div class="nav__shop viewFavourites" id="cart-shop">
-            <i class="bx bx-heart"></i>
-          </div>
-          <div class="nav__shop">
-            <i class="bx bx-shopping-bag"></i>
-          </div>
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <i class="bx bxs-shopping-bag nav__logo-icon"></i> CARNAGE SHOES
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../../../index.html" class="nav__link">HOME</a>
+          </li>
+          <li class="nav__item">
+            <a href="../../html/search.html" class="nav__link">SHOP</a>
+          </li>
+          <li class="nav__item">
+            <a href="../../html/contact.html" class="nav__link">CONTACT</a>
+          </li>
+        </ul>
 
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="bx bx-grid-alt"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!--====================FAV CART ====================-->
-    <div class="cart" id="cart">
-      <i class="bx bx-x cart__close" id="cart-close"></i>
-
-      <h2 class="cart__title-center">FAVOURITES</h2>
-
-      <div class="cart__container" id="favourite_list"></div>
-      <button class="clearFavourites">Clear Favourites</button>
-    </div>
-    <!--==================== MAIN ====================-->
-    <main class="main">
-      <section class="featured section" id="featured">
-        <h1 class="heading section__title"><span>featured</span> products</h1>
-        <div class="card-wrapper">
-          <div class="card">
-            <!-- card left -->
-            <div class="product-imgs">
-              <div class="img-display">
-                <div class="img-showcase">
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/shoe3.png"
-                    alt="shoe image"
-                  />
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/s1.png"
-                    alt="shoe image"
-                  />
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/s2.png"
-                    alt="shoe image"
-                  />
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/s3.png"
-                    alt="shoe image"
-                  />
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/s4.png"
-                    alt="shoe image"
-                  />
-                  <img
-                    class="show-image"
-                    src="../../img/shoe3/s5.png"
-                    alt="shoe image"
-                  />
-                </div>
-              </div>
-              <div class="img-select">
-                <div class="img-item">
-                  <a href="#" data-id="1">
-                    <img src="../../img/shoe3/shoe3.png" alt="shoe image" />
-                  </a>
-                </div>
-                <div class="img-item">
-                  <a href="#" data-id="2">
-                    <img src="../../img/shoe3/s1.png" alt="shoe image" />
-                  </a>
-                </div>
-                <div class="img-item">
-                  <a href="#" data-id="3">
-                    <img src="../../img/shoe3/s2.png" alt="shoe image" />
-                  </a>
-                </div>
-                <div class="img-item">
-                  <a href="#" data-id="4">
-                    <img src="../../img/shoe3/s3.png" alt="shoe image" />
-                  </a>
-                </div>
-                <div class="img-item">
-                  <a href="#" data-id="5">
-                    <img src="../../img/shoe3/s4.png" alt="shoe image" />
-                  </a>
-                </div>
-                <div class="img-item">
-                  <a href="#" data-id="6">
-                    <img src="../../img/shoe3/s5.png" alt="shoe image" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- card right -->
-            <div class="product-content">
-              <h2 class="product-title">Nike Renew Run 2</h2>
-
-              <div class="product-price">
-                <p class="new-price">New Price: <span>$159.00</span></p>
-              </div>
-
-              <div class="product-detail">
-                <h2>DESCRIPTION</h2>
-                <p>
-                  A workhorse built to help power you through every mile of the
-                  race, the Nike Air Zoom Pegasus 38 continues to put a spring
-                  in your step, using the same responsive foam as its
-                  predecessor.
-                </p>
-                <ul class="sub-details">
-                  <li>Gender: <span>Universal</span></li>
-                  <li>Style: <span>Running</span></li>
-                  <li>Color: <span>Grey/ Black/ sBlue </span></li>
-                  <li>
-                    Sizes:
-                    <span class="size-num">
-                      <span class="each-size">7</span>
-                      <span class="each-size">7.5</span>
-                      <span class="each-size">8</span>
-                      <span class="each-size">8.5</span>
-                      <span class="each-size">9</span>
-                      <span class="each-size">9.5</span>
-                    </span>
-                  </li>
-                  <li>Available: <span>in stock</span></li>
-                  <li>Shipping Area: <span>All over the world</span></li>
-                  <li>Shipping Fee: <span>Free</span></li>
-                </ul>
-              </div>
-
-              <div class="purchase-info">
-                <div class="btn-div" id="shoe3">
-                  <button type="button" class="btn" id="fav-btn">
-                    Add to Favourites
-                  </button>
-                  <button type="button" class="btn" id="remove-fav">
-                    Remove from Favourites
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="more section container" id="story">
-        <div class="story__container">
-          <h2 class="section__title story__section-title">More Details</h2>
-          <div id="tabs">
-            <ul class="tabs">
-              <li><a href="#tabs-1">PRODUCT DETAILS</a></li>
-              <li><a href="#tabs-2">PAYMENT OPTIONS</a></li>
-              <li><a href="#tabs-3">DELIVERY & RETURN</a></li>
-              <li><a href="#tabs-4">SIZE CHART</a></li>
-            </ul>
-            <div id="tabs-1">
-              <div class="story__data">
-                <h1 class="story__title">SHOE DETAILS</h1>
-
-                <p class="story__description">
-                  When running becomes a daily goal, you want a running shoe
-                  that's tough on the road and soft on your feet.Designed with
-                  better shaping around the collar and tongue to help support
-                  your foot, every step feels supported.
-                </p>
-                <br />
-                <div class="experience__content grid">
-                  <div class="experience__data">
-                    <h2 class="experience__number">40</h2>
-                    <span class="experience__description"
-                      >Years <br />
-                      of classics</span
-                    >
-                  </div>
-
-                  <div class="experience__data">
-                    <h2 class="experience__number">6</h2>
-                    <span class="experience__description"
-                      >Versions <br />
-                      and beyond</span
-                    >
-                  </div>
-
-                  <div class="experience__data">
-                    <h2 class="experience__number">65k+</h2>
-                    <span class="experience__description">
-                      Unites<br />were Sold
-                    </span>
-                  </div>
-                </div>
-                <br />
-                <p class="story__description">
-                  The Nike Pegasus 38 is a plush daily trainer with a stable
-                  midsole and a peppy ride. Your workhorse with wings returns
-                  with a mashup of classic Nike logos. The Nike Air Zoom Pegasus
-                  38 has that extra bounce for long, short or everyday runs.
-                  It's cool and breathable with a wider fit at the toes and
-                  plenty of cushioned support to help you fly past your personal
-                  goals.
-                </p>
-              </div>
-            </div>
-            <div id="tabs-2">
-              <div class="story__images">
-                <div class="footer__content">
-                  <h3 class="footer__title">PAYMENT OPTIONS</h3>
-                  <p class="story__description">
-                    Payments are handled securely by Paypal.<br />
-                    We accept the following payments.
-                  </p>
-                  <div class="footer__cards">
-                    <img
-                      src="../../img/card1.png"
-                      alt=""
-                      class="footer__card"
-                    />
-                    <img
-                      src="../../img/card2.png"
-                      alt=""
-                      class="footer__card"
-                    />
-                    <img
-                      src="../../img/card3.png"
-                      alt=""
-                      class="footer__card"
-                    />
-                    <img
-                      src="../../img/card4.png"
-                      alt=""
-                      class="footer__card"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="tabs-3">
-              <div class="story__data">
-                <h1 class="story__title">Delivery and Returns</h1>
-
-                <p class="story_details">
-                  <li class="list-details">
-                    <strong>£6.95</strong> DPD Next Day Delivery (Order before
-                    7pm)
-                  </li>
-                  <li class="list-details">
-                    <strong>FREE</strong> Collect from store (Within 4 working
-                    days)
-                  </li>
-                  <li class="list-details">
-                    <strong>£3.95</strong> Standard Delivery (Within 4 working
-                    days)
-                  </li>
-                  <li class="list-details">
-                    <strong>£3.95</strong> Collect Plus (Within 5 working days)
-                  </li>
-                  <li class="list-details">
-                    <strong>£5.95</strong> Hermes Express Delivery (Within 2
-                    working days)
-                  </li>
-                  <li class="list-details">
-                    <strong>FREE</strong> Returns & Exchanges on all Items
-                  </li>
-                </p>
-              </div>
-            </div>
-            <div id="tabs-4">
-              <div>
-                <h2>Universal Shoe size chart</h2>
-                <p
-                  class="table-label"
-                  id="table-label_competition-and-short-sizes"
-                >
-                  Categories & Shoe Sizes (in Inches)
-                </p>
-                <table
-                  class="rtable rtable--flip"
-                  aria-labelledby="table-label_competition-and-short-sizes"
-                >
-                  <thead>
-                    <tr>
-                      <th>UK Sizes</th>
-                      <th>US Sizes</th>
-                      <th>EU Sizes</th>
-                      <th>Foot Length</th>
-                      <th>Ankle angle</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>5</td>
-                      <td>38</td>
-                      <td>38</td>
-                      <td>20-22</td>
-                      <td>24-26</td>
-                    </tr>
-                    <tr>
-                      <td>5 1/2</td>
-                      <td>39</td>
-                      <td>38 1/2</td>
-                      <td>22-24</td>
-                      <td>26-28</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>40</td>
-                      <td>39</td>
-                      <td>24-25</td>
-                      <td>28-30</td>
-                    </tr>
-                    <tr>
-                      <td>6 1/2</td>
-                      <td>41</td>
-                      <td>40</td>
-                      <td>25-26</td>
-                      <td>30-32</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>42</td>
-                      <td>41 1/2</td>
-                      <td>26-28</td>
-                      <td>32-33</td>
-                    </tr>
-                    <tr>
-                      <td>7 1/2</td>
-                      <td>43</td>
-                      <td>42</td>
-                      <td>28-30</td>
-                      <td>33-35</td>
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td>44</td>
-                      <td>43 1/2</td>
-                      <td>30-32</td>
-                      <td>35-37</td>
-                    </tr>
-                    <tr>
-                      <td>8 1/2</td>
-                      <td>45</td>
-                      <td>44</td>
-                      <td>32-34</td>
-                      <td>37-39</td>
-                    </tr>
-                    <tr>
-                      <td>9</td>
-                      <td>46</td>
-                      <td>45</td>
-                      <td>34-36</td>
-                      <td>39-41</td>
-                    </tr>
-                    <tr>
-                      <td>9 1/2</td>
-                      <td>47</td>
-                      <td>46 1/2</td>
-                      <td>36-38.5</td>
-                      <td>41-43</td>
-                    </tr>
-                    <tr>
-                      <td>10</td>
-                      <td>48</td>
-                      <td>47</td>
-                      <td>38.5-41</td>
-                      <td>43-45.5</td>
-                    </tr>
-                    <tr>
-                      <td>10 1/2</td>
-                      <td>48 1/2</td>
-                      <td>48</td>
-                      <td>41-43</td>
-                      <td>45.5-48</td>
-                    </tr>
-                    <tr>
-                      <td>11</td>
-                      <td>49</td>
-                      <td>49</td>
-                      <td>43-45</td>
-                      <td>48-50</td>
-                    </tr>
-                    <tr>
-                      <td>11 1/2</td>
-                      <td>50</td>
-                      <td>50</td>
-                      <td>45-47</td>
-                      <td>50-52</td>
-                    </tr>
-                    <tr>
-                      <td>12</td>
-                      <td>51</td>
-                      <td>50 1/2</td>
-                      <td>47-49</td>
-                      <td>52-54</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <p class="table-label" id="table-label_mens-trainer">
-                  Shoe width Sizes (in Inches)
-                </p>
-                <table
-                  class="rtable rtable--flip"
-                  aria-labelledby="table-label_mens-trainer"
-                >
-                  <thead>
-                    <tr>
-                      <th>Sizes</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>S</td>
-                      <td>Standard Fit</td>
-                    </tr>
-                    <tr>
-                      <td>M</td>
-                      <td>Medium Fit</td>
-                    </tr>
-                    <tr>
-                      <td>L</td>
-                      <td>Normalized Fit</td>
-                    </tr>
-                    <tr>
-                      <td>XL</td>
-                      <td>Wide Fit</td>
-                    </tr>
-                    <tr>
-                      <td>XXL</td>
-                      <td>Extra Wide Fit</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer section">
-      <div class="footer__container container grid">
-        <div class="footer__content">
-          <h3 class="footer__title">Our information</h3>
-
-          <ul class="footer__list">
-            <li>0307 - Kandy</li>
-            <li>Wonder of Asia</li>
-            <li>076-5455023</li>
-          </ul>
-        </div>
-        <div class="footer__content">
-          <h3 class="footer__title">About Us</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Support Center</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Customer Support</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">About Us</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Copy Right</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Product</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Road bikes</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Mountain bikes</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Electric</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Accesories</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Social</h3>
-
-          <ul class="footer__social">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-facebook"></i>
-            </a>
-
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-twitter"></i>
-            </a>
-
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-instagram"></i>
-            </a>
-          </ul>
+        <div class="nav__close" id="nav-close">
+          <i class="bx bx-x"></i>
         </div>
       </div>
 
-      <span class="footer__copy">&#169; Ratheshan03. All rigths reserved</span>
-    </footer>
+      <div class="nav__btns">
+        <div class="nav__shop viewFavourites" id="cart-shop">
+          <i class="bx bx-heart"></i>
+        </div>
+        <div class="nav__shop">
+          <i class="bx bx-shopping-bag"></i>
+        </div>
 
-    <script></script>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-grid-alt"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!--=============== SCROLL UP ===============-->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
-    </a>
-    <script>
-      var photos = [
-        {
-          src: "../../img/shoe3/shoe3.png",
-          title: "Image 1",
-        },
-        {
-          src: "../../img/shoe3/s1.png",
-          title: "Image 2",
-        },
-        {
-          src: "../../img/shoe3/s2.png",
-          title: "Image 3",
-        },
-        {
-          src: "../../img/shoe3/s3.png",
-          title: "Image 4",
-        },
-        {
-          src: "../../img/shoe3/s4.png",
-          title: "Image 5",
-        },
-        {
-          src: "../../img/shoe3/s5.png",
-          title: "Image 6",
-        },
-      ];
-    </script>
+  <!--====================FAV CART ====================-->
+  <div class="cart" id="cart">
+    <i class="bx bx-x cart__close" id="cart-close"></i>
 
-    <!--=============== SWIPER JS ===============-->
-    <script src="../../js/swiper-bundle.min.js"></script>
+    <h2 class="cart__title-center">FAVOURITES</h2>
 
-    <!--=============== photoviewer Plugin =================-->
-    <script src="../../photoviewer-master/dist/photoviewer.min.js"></script>
+    <div class="cart__container" id="favourite_list"></div>
+    <button class="clearFavourites">Clear Favourites</button>
+  </div>
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <section class="featured section" id="featured">
+      <h1 class="heading section__title"><span>featured</span> products</h1>
+      <div class="card-wrapper">
+        <div class="card">
+          <!-- card left -->
+          <div class="product-imgs">
+            <div class="img-display">
+              <div class="img-showcase">
+                <img class="show-image" src="../../img/shoe3/shoe3.png" alt="shoe image" />
+                <img class="show-image" src="../../img/shoe3/s1.png" alt="shoe image" />
+                <img class="show-image" src="../../img/shoe3/s2.png" alt="shoe image" />
+                <img class="show-image" src="../../img/shoe3/s3.png" alt="shoe image" />
+                <img class="show-image" src="../../img/shoe3/s4.png" alt="shoe image" />
+                <img class="show-image" src="../../img/shoe3/s5.png" alt="shoe image" />
+              </div>
+            </div>
+            <div class="img-select">
+              <div class="img-item">
+                <a href="#" data-id="1">
+                  <img src="../../img/shoe3/shoe3.png" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="2">
+                  <img src="../../img/shoe3/s1.png" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="3">
+                  <img src="../../img/shoe3/s2.png" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="4">
+                  <img src="../../img/shoe3/s3.png" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="5">
+                  <img src="../../img/shoe3/s4.png" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="6">
+                  <img src="../../img/shoe3/s5.png" alt="shoe image" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- card right -->
+          <div class="product-content">
+            <h2 class="product-title">Nike Renew Run 2</h2>
 
-    <!--================== jquery ======================-->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+            <div class="product-price">
+              <p class="new-price">New Price: <span>$159.00</span></p>
+            </div>
 
-    <!--=============== MAIN JS ===============-->
-    <script src="../../js/main.js"></script>
-  </body>
+            <div class="product-detail">
+              <h2>DESCRIPTION</h2>
+              <p>
+                A workhorse built to help power you through every mile of the
+                race, the Nike Air Zoom Pegasus 38 continues to put a spring
+                in your step, using the same responsive foam as its
+                predecessor.
+              </p>
+              <ul class="sub-details">
+                <li>Gender: <span>Universal</span></li>
+                <li>Style: <span>Running</span></li>
+                <li>Color: <span>Grey/ Black/ sBlue </span></li>
+                <li>
+                  Sizes:
+                  <span class="size-num">
+                    <span class="each-size">7</span>
+                    <span class="each-size">7.5</span>
+                    <span class="each-size">8</span>
+                    <span class="each-size">8.5</span>
+                    <span class="each-size">9</span>
+                    <span class="each-size">9.5</span>
+                  </span>
+                </li>
+                <li>Available: <span>in stock</span></li>
+                <li>Shipping Area: <span>All over the world</span></li>
+                <li>Shipping Fee: <span>Free</span></li>
+              </ul>
+            </div>
+
+            <div class="purchase-info">
+              <div class="btn-div" id="shoe3">
+                <button type="button" class="btn" id="fav-btn">
+                  Add to Favourites
+                </button>
+                <button type="button" class="btn" id="remove-fav">
+                  Remove from Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="more section container" id="story">
+      <div class="story__container">
+        <h2 class="section__title story__section-title">More Details</h2>
+        <div id="tabs">
+          <ul class="tabs">
+            <li><a href="#tabs-1">PRODUCT DETAILS</a></li>
+            <li><a href="#tabs-2">PAYMENT OPTIONS</a></li>
+            <li><a href="#tabs-3">DELIVERY & RETURN</a></li>
+            <li><a href="#tabs-4">SIZE CHART</a></li>
+          </ul>
+          <div id="tabs-1">
+            <div class="story__data">
+              <h1 class="story__title">SHOE DETAILS</h1>
+
+              <p class="story__description">
+                When running becomes a daily goal, you want a running shoe
+                that's tough on the road and soft on your feet.Designed with
+                better shaping around the collar and tongue to help support
+                your foot, every step feels supported.
+              </p>
+              <br />
+              <div class="experience__content grid">
+                <div class="experience__data">
+                  <h2 class="experience__number">40</h2>
+                  <span class="experience__description">Years <br />
+                    of classics</span>
+                </div>
+
+                <div class="experience__data">
+                  <h2 class="experience__number">6</h2>
+                  <span class="experience__description">Versions <br />
+                    and beyond</span>
+                </div>
+
+                <div class="experience__data">
+                  <h2 class="experience__number">65k+</h2>
+                  <span class="experience__description">
+                    Unites<br />were Sold
+                  </span>
+                </div>
+              </div>
+              <br />
+              <p class="story__description">
+                The Nike Pegasus 38 is a plush daily trainer with a stable
+                midsole and a peppy ride. Your workhorse with wings returns
+                with a mashup of classic Nike logos. The Nike Air Zoom Pegasus
+                38 has that extra bounce for long, short or everyday runs.
+                It's cool and breathable with a wider fit at the toes and
+                plenty of cushioned support to help you fly past your personal
+                goals.
+              </p>
+            </div>
+          </div>
+          <div id="tabs-2">
+            <div class="story__images">
+              <div class="footer__content">
+                <h3 class="footer__title">PAYMENT OPTIONS</h3>
+                <p class="story__description">
+                  Payments are handled securely by Paypal.<br />
+                  We accept the following payments.
+                </p>
+                <div class="footer__cards">
+                  <img src="../../img/card1.png" alt="" class="footer__card" />
+                  <img src="../../img/card2.png" alt="" class="footer__card" />
+                  <img src="../../img/card3.png" alt="" class="footer__card" />
+                  <img src="../../img/card4.png" alt="" class="footer__card" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tabs-3">
+            <div class="story__data">
+              <h1 class="story__title">Delivery and Returns</h1>
+
+              <p class="story_details">
+                <li class="list-details">
+                  <strong>£6.95</strong> DPD Next Day Delivery (Order before
+                  7pm)
+                </li>
+                <li class="list-details">
+                  <strong>FREE</strong> Collect from store (Within 4 working
+                  days)
+                </li>
+                <li class="list-details">
+                  <strong>£3.95</strong> Standard Delivery (Within 4 working
+                  days)
+                </li>
+                <li class="list-details">
+                  <strong>£3.95</strong> Collect Plus (Within 5 working days)
+                </li>
+                <li class="list-details">
+                  <strong>£5.95</strong> Hermes Express Delivery (Within 2
+                  working days)
+                </li>
+                <li class="list-details">
+                  <strong>FREE</strong> Returns & Exchanges on all Items
+                </li>
+              </p>
+            </div>
+          </div>
+          <div id="tabs-4">
+            <div>
+              <h2>Universal Shoe size chart</h2>
+              <p class="table-label" id="table-label_competition-and-short-sizes">
+                Categories & Shoe Sizes (in Inches)
+              </p>
+              <table class="rtable rtable--flip" aria-labelledby="table-label_competition-and-short-sizes">
+                <thead>
+                  <tr>
+                    <th>UK Sizes</th>
+                    <th>US Sizes</th>
+                    <th>EU Sizes</th>
+                    <th>Foot Length</th>
+                    <th>Ankle angle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>5</td>
+                    <td>38</td>
+                    <td>38</td>
+                    <td>20-22</td>
+                    <td>24-26</td>
+                  </tr>
+                  <tr>
+                    <td>5 1/2</td>
+                    <td>39</td>
+                    <td>38 1/2</td>
+                    <td>22-24</td>
+                    <td>26-28</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>40</td>
+                    <td>39</td>
+                    <td>24-25</td>
+                    <td>28-30</td>
+                  </tr>
+                  <tr>
+                    <td>6 1/2</td>
+                    <td>41</td>
+                    <td>40</td>
+                    <td>25-26</td>
+                    <td>30-32</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>42</td>
+                    <td>41 1/2</td>
+                    <td>26-28</td>
+                    <td>32-33</td>
+                  </tr>
+                  <tr>
+                    <td>7 1/2</td>
+                    <td>43</td>
+                    <td>42</td>
+                    <td>28-30</td>
+                    <td>33-35</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>44</td>
+                    <td>43 1/2</td>
+                    <td>30-32</td>
+                    <td>35-37</td>
+                  </tr>
+                  <tr>
+                    <td>8 1/2</td>
+                    <td>45</td>
+                    <td>44</td>
+                    <td>32-34</td>
+                    <td>37-39</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>46</td>
+                    <td>45</td>
+                    <td>34-36</td>
+                    <td>39-41</td>
+                  </tr>
+                  <tr>
+                    <td>9 1/2</td>
+                    <td>47</td>
+                    <td>46 1/2</td>
+                    <td>36-38.5</td>
+                    <td>41-43</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>48</td>
+                    <td>47</td>
+                    <td>38.5-41</td>
+                    <td>43-45.5</td>
+                  </tr>
+                  <tr>
+                    <td>10 1/2</td>
+                    <td>48 1/2</td>
+                    <td>48</td>
+                    <td>41-43</td>
+                    <td>45.5-48</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>49</td>
+                    <td>49</td>
+                    <td>43-45</td>
+                    <td>48-50</td>
+                  </tr>
+                  <tr>
+                    <td>11 1/2</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>45-47</td>
+                    <td>50-52</td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td>51</td>
+                    <td>50 1/2</td>
+                    <td>47-49</td>
+                    <td>52-54</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="table-label" id="table-label_mens-trainer">
+                Shoe width Sizes (in Inches)
+              </p>
+              <table class="rtable rtable--flip" aria-labelledby="table-label_mens-trainer">
+                <thead>
+                  <tr>
+                    <th>Sizes</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>S</td>
+                    <td>Standard Fit</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>Medium Fit</td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>Normalized Fit</td>
+                  </tr>
+                  <tr>
+                    <td>XL</td>
+                    <td>Wide Fit</td>
+                  </tr>
+                  <tr>
+                    <td>XXL</td>
+                    <td>Extra Wide Fit</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Our information</h3>
+
+        <ul class="footer__list">
+          <li>0307 - Kandy</li>
+          <li>Wonder of Asia</li>
+          <li>076-5455023</li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">About Us</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Support Center</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Customer Support</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Copy Right</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Product</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Road bikes</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Mountain bikes</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Electric</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Accesories</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Social</h3>
+
+        <ul class="footer__social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+            <i class="bx bxl-facebook"></i>
+          </a>
+
+          <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+            <i class="bx bxl-twitter"></i>
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+    <span class="footer__copy">&#169; Ratheshan03. All rigths reserved</span>
+  </footer>
+
+  <script></script>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+  </a>
+  <script>
+    var photos = [
+      {
+        src: "../../img/shoe3/shoe3.png",
+        title: "Image 1",
+      },
+      {
+        src: "../../img/shoe3/s1.png",
+        title: "Image 2",
+      },
+      {
+        src: "../../img/shoe3/s2.png",
+        title: "Image 3",
+      },
+      {
+        src: "../../img/shoe3/s3.png",
+        title: "Image 4",
+      },
+      {
+        src: "../../img/shoe3/s4.png",
+        title: "Image 5",
+      },
+      {
+        src: "../../img/shoe3/s5.png",
+        title: "Image 6",
+      },
+    ];
+  </script>
+
+  <!--=============== SWIPER JS ===============-->
+  <script src="../../js/swiper-bundle.min.js"></script>
+
+  <!--=============== SWEET ALERT ===============-->
+  <script src="../../js/sweetalert.min.js"></script>
+
+  <!--=============== photoviewer Plugin =================-->
+  <script src="../../photoviewer-master/dist/photoviewer.min.js"></script>
+
+  <!--================== jquery ======================-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="../../js/main.js"></script>
+</body>
+
 </html>
