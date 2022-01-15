@@ -194,7 +194,7 @@ $(document).ready(function () {
           swal_message_gen(
             "success",
             "Shoe Added to the Favorite list",
-            "<p>To check the favorite list head over to Shop page.</p>",
+            "To check the favorite list head over to Shop page.",
             "#edfffc"
           );
         } else {
@@ -211,7 +211,7 @@ $(document).ready(function () {
             swal_message_gen(
               "success",
               "Shoe Added to the Favorite list",
-              "<p>To check the favorite list head over to Shop page.</p>",
+              "To check the favorite list head over to Shop page.",
               "#edfffc"
             );
           }
@@ -279,7 +279,7 @@ $(document).ready(function () {
             swal_message_gen(
               "success",
               "Shoe removed from the Favorite list!",
-              "<p>To check the favorite list head over to Shop page.</p>",
+              "To check the favorite list head over to Shop page.",
               "#edfffc"
             );
           }
@@ -289,7 +289,7 @@ $(document).ready(function () {
         swal_message_gen(
           "error",
           "There are no shoes in the Fav list!",
-          "<p>Please view and check the Fav list</p>",
+          "Please view and check the Fav list",
           "#edfffc"
         );
       }
@@ -306,7 +306,7 @@ $(document).ready(function () {
       swal_message_gen(
         "success",
         "All shoes have been removed from the Favorite list!",
-        "<p>Add new shoes to your fav list.</p>",
+        "Add new shoes to your fav list.",
         "#edfffc"
       );
     });
@@ -451,7 +451,7 @@ function add_fav_list(shoeIdToAdd) {
       swal_message_gen(
         "success",
         "Shoe Added to the Favorite list",
-        "<p>To check the favorite list head over to Shop page.</p>",
+        "To check the favorite list head over to Shop page.",
         "#edfffc"
       );
     } else {
@@ -459,7 +459,7 @@ function add_fav_list(shoeIdToAdd) {
         swal_message_gen(
           "error",
           "The shoe already been added to the Fav list!",
-          "<p>Please view and check the Fav list</p>",
+          "Please view and check the Fav list",
           "#edfffc"
         );
       } else {
@@ -468,7 +468,7 @@ function add_fav_list(shoeIdToAdd) {
         swal_message_gen(
           "success",
           "Shoe Added to the Favorite list",
-          "<p>To check the favorite list head over to Shop page.</p>",
+          "To check the favorite list head over to Shop page.",
           "#edfffc"
         );
       }
@@ -485,7 +485,7 @@ function remove_fav(shoeIdToRemove) {
     swal_message_gen(
       "error",
       "Favorite list is empty! ",
-      "<p>Please view and check the Fav list</p>",
+      "Please view and check the Fav list",
       "#edfffc"
     );
   } else {
@@ -497,7 +497,7 @@ function remove_fav(shoeIdToRemove) {
         swal_message_gen(
           "success",
           "Shoe removed from the Favorite list!",
-          "<p>To check the favorite list head over to Shop page.</p>",
+          "To check the favorite list head over to Shop page.",
           "#edfffc"
         );
       }
@@ -513,7 +513,7 @@ function delete_list_item(shoe_id) {
   swal_message_gen(
     "success",
     "Shoe removed from the Favorite list!",
-    "<p>To check the favorite list head over to Shop page.</p>",
+    "To check the favorite list head over to Shop page.",
     "#edfffc"
   );
 }
