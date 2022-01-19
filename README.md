@@ -1,5 +1,11 @@
 # Shoe-Ecommerce-website
 
+Technology Stck used:
+- HTML
+- CSS
+- Javascript
+- Json
+- Jquery
 .
 .
 .
