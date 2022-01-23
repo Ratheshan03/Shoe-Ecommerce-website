@@ -1,4 +1,5 @@
 # Shoe-Ecommerce-website
+### Basic Ecommerce Website
 
 Technology Stck used:
 - HTML
@@ -7,8 +8,4 @@ Technology Stck used:
 - Json
 - Jquery
 
-.
-.
-.
-
-2nd year - Addvance Client side Development module Coursework ✨
+### The project has been done in order fulfill requirements of 2nd Year - Addvance Client side Web Development module Coursework ✨
